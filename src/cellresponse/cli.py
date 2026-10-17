@@ -22,6 +22,11 @@ def main(argv: list[str] | None = None) -> None:
     )
     prepare.add_argument("--config", required=True)
 
+    split = commands.add_parser(
+        "split", help="freeze splits, goals, queries, and the representation"
+    )
+    split.add_argument("--config", required=True)
+
     args = parser.parse_args(argv)
     if args.command == "audit":
         from cellresponse.data.run_audit import run
@@ -31,6 +36,10 @@ def main(argv: list[str] | None = None) -> None:
         from cellresponse.data.prepare import run as run_prepare
 
         run_prepare(load_config(args.config))
+    elif args.command == "split":
+        from cellresponse.contract import run as run_split
+
+        run_split(load_config(args.config))
 
 
 if __name__ == "__main__":

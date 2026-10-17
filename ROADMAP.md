@@ -12,8 +12,8 @@ A failed gate is a result to record, not a reason to change the test set.
 | Milestone | State | Landmark |
 | --- | --- | --- |
 | M0 Audit | **Done** | Reproducible audit, verified cell-location map, feasible panels, footprints |
-| M1a Cohort freeze + data prep | Next | Smoke cohort on disk, then prototype cohort; canonical tables |
-| M1b Benchmark contract | Planned | Frozen splits, goals, representation, query manifests |
+| M1a Cohort freeze + data prep | **Done** | Prototype cohort on disk; counts match for 2,436,792 cells |
+| M1b Benchmark contract | **Done** | Splits, goals, queries, and the representation gate (direct module scores) |
 | M2 Baselines | Planned | Validation metrics for untreated, shared-shift, ridge, Gaussian |
 | M3 Distribution models | Planned | Mixture and flow selected on validation |
 | M4 Final evaluation | Planned | Locked rankings, test + replicate audits, three seeds |
@@ -75,6 +75,12 @@ identical cell IDs and checksums, and per-cell totals match `tscp_count` for 100
 **Landmark M1b:** `pytest` leakage suite passes (pair grouping, structure groups, plate-14
 exclusion, train-only fitting, control/target disjointness, query files without outcomes), and
 the representation gate result is recorded in `reports/representation.md`.
+
+**Gate result (2026-10-17).** Median absolute event-fraction error is within 0.05 for all four
+goals. Rank correlation is not: 0.64 for G2/M, 0.68 for p53, 0.70 for apoptosis, and 0.83 for
+interferon-gamma. Only 17–29% of each module's genes are among the 2,000 HVGs. Inverse search
+will model the module scores directly. PCA-64 remains the representation for distributional
+baselines. The test queries were not changed after the gate.
 
 ## M2: baselines (CPU; NumPy/scikit-learn plus small JAX models)
 

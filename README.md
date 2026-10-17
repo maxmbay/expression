@@ -25,7 +25,7 @@ A call takes the line's cells from one solvent well, a structure (SMILES), and a
 3. **Draw cells.** 512 standard-normal draws pass through a rational-quadratic spline flow (6 couplings, 8 bins, 2×256 conditioners, 1.84M parameters), and every coupling reads `h`. The output is a residual `R`; the cells are `Z = R + m0`.
 4. **Score.** The goal tests each drawn cell: the wanted gene module above a threshold and the unwanted one under a limit. Both cutoffs come from training solvent cells and are fixed before any test outcome is seen. Utility is the drug's share minus the share from the same call with the solvent flag.
 
-The share, the spread across three separately trained flows, the Monte Carlo error, and the support flags come back as separate numbers. A structure with no fingerprint is refused, and a dose other than 0.05, 0.5, or 5 µM is flagged as unevaluated. If the 64 coordinates distort goal shares on validation (median error above 0.05, or rank correlation below 0.8), the flow models the module scores directly and the call is otherwise unchanged.
+The share, the spread across three separately trained flows, the Monte Carlo error, and the support flags come back as separate numbers. A structure with no fingerprint is refused, and a dose other than 0.05, 0.5, or 5 µM is flagged as unevaluated. On the frozen validation split the 64 coordinates keep event fractions within 0.05 of the raw scores, but the ranking does not follow (Spearman 0.64–0.83) and most of each module's genes never enter the 2,000-gene set. The flow therefore models the four module scores directly. The call is otherwise unchanged.
 
 ## Optimization
 
@@ -46,7 +46,7 @@ Joint drug and dose search is not evaluated today, because each dose sits on its
 ## Training
 
 ```mermaid
-flowchart LR
+flowchart TB
   subgraph stored ["Data on disk"]
     direction TB
     Split[("Frozen split<br/>held-out pairs and plate 14 stay out")] --> Cells[("Training cells")]
@@ -56,7 +56,7 @@ flowchart LR
     Fit["Fit T<br/>training cells only"] --> Map[["T<br/>scale, log1p, 2,000 genes, 64 PCs"]]
   end
   subgraph draw ["One batch, drawn from the training cells"]
-    direction LR
+    direction TB
     Batch[/"1,024 cells, through T<br/>a condition, then a well, then cells"/]
     Resid[/"Residual R = Z − m0<br/>m0 from the reference well"/]
     Cond[/"Condition h<br/>m0, log σ0, fingerprint, dose, flag"/]
@@ -66,7 +66,7 @@ flowchart LR
     Chem -->|fingerprint, dose| Cond
   end
   subgraph loop ["Every update"]
-    direction TB
+    direction LR
     Flow[["Spline flow<br/>6 couplings, 8 bins, 1.84M weights"]]
     Loss["Loss<br/>−log p(R | h)"]
     Update["AdamW step<br/>3e-4, weight decay 1e-4, clip 1.0"]
@@ -106,10 +106,9 @@ Each group is a stage, and the shape says what a box is. Cylinders are data kept
 
 | | |
 | --- | --- |
-| Done | Data and design audits, a verified cell-location map, the smoke cohort (plate 6, 4 lines, 12 drugs, 10,240 cells) |
-| In progress | Prototype cohort: 12 lines, plates 4–9 and 14, about 2.4M cells |
-| Next | Frozen splits, goals, and `T`, then the representation gate |
-| Specified, not built | Baselines, flow, plate search, cross-plate search |
+| Done | Audits, the prototype cohort (12 lines, plates 4–9 and 14, 2,436,792 cells), frozen splits, four goals, and the representation gate |
+| Next | Baselines on the validation queries |
+| Specified, not built | Flow on the module scores, plate search, cross-plate search |
 
 ## Run
 
@@ -118,6 +117,7 @@ Each group is a stage, and the shape says what a box is. Cylinders are data kept
 uv run pytest
 uv run cellresponse audit --config configs/audit.yaml     # writes reports/
 uv run cellresponse prepare --config configs/smoke.yaml   # smoke cohort, about 1 GB
+uv run cellresponse split --config configs/prototype.yaml  # frozen splits, queries, representation
 uv run python scripts/readme_figures.py                   # these figures; needs the smoke cohort
 ```
 
