@@ -30,6 +30,11 @@ def main(argv: list[str] | None = None) -> None:
     baselines = commands.add_parser("baselines", help="fit M2 baselines on validation queries")
     baselines.add_argument("--config", required=True)
 
+    flow = commands.add_parser(
+        "flow", help="train the module-score flow and compare it on validation"
+    )
+    flow.add_argument("--config", required=True)
+
     args = parser.parse_args(argv)
     if args.command == "audit":
         from cellresponse.data.run_audit import run
@@ -47,6 +52,10 @@ def main(argv: list[str] | None = None) -> None:
         from cellresponse.baselines.run import run as run_baselines
 
         run_baselines(load_config(args.config))
+    elif args.command == "flow":
+        from cellresponse.flow_train import run as run_flow
+
+        run_flow(load_config(args.config))
 
 
 if __name__ == "__main__":

@@ -15,7 +15,7 @@ A failed gate is a result to record, not a reason to change the test set.
 | M1a Cohort freeze + data prep | **Done** | Prototype cohort on disk; counts match for 2,436,792 cells |
 | M1b Benchmark contract | **Done** | Splits, goals, queries, and the representation gate (direct module scores) |
 | M2 Baselines | **Done** | Shared shift leads validation; untreated tie goes to doing nothing |
-| M3 Distribution models | Planned | Mixture and flow selected on validation |
+| M3 Distribution models | **Done** | Flow inverse-checks pass; it does not beat the shared shift |
 | M4 Final evaluation | Planned | Locked rankings, test + replicate audits, three seeds |
 | M5 Portfolio | Planned | Explorer, model card, technical report |
 
@@ -110,6 +110,10 @@ uniformly, then wells, then cells. AdamW 3e-4, clip 1.0, early stopping on valid
 **Landmark M3:** frozen configs and checkpoints; numerical checks (inverse consistency, finite
 log-det) pass; validation comparison against the best M2 baseline written up. Benchmark the step
 time on 100k cells first and extrapolate before any long run (target: <1 h per run).
+
+**Result (2026-10-17).** The module-score flow's inverse error is 1.2e-7. Its validation top-1
+utility is 0.002 against 0.026 for the shared shift (`reports/flow.md`). It is not the selected
+model. A mixture was not fit: the Gaussian baseline already lost to the shift on the same scores.
 
 ## M4: final evaluation
 
