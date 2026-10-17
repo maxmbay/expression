@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -58,6 +59,8 @@ def download(path: str, revision: str, root: Path, expected_size: int | None = N
     partial = target.with_name(target.name + ".part")
     offset = partial.stat().st_size if partial.exists() else 0
     headers = {"Range": f"bytes={offset}-"} if offset else {}
+    if token := os.environ.get("HF_TOKEN"):
+        headers["Authorization"] = f"Bearer {token}"
     with httpx.stream(
         "GET", resolve_url(path, revision), headers=headers, follow_redirects=True, timeout=60
     ) as response:

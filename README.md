@@ -14,14 +14,14 @@ strong baselines is the benchmark.
 ## Quick start
 
 ```bash
-uv sync
+./scripts/setup.sh   # direnv + .env with HF_TOKEN (prompted, hidden) + uv sync
 uv run pytest
 uv run cellresponse audit --config configs/audit.yaml            # downloads ~2.4 GB of metadata
 uv run cellresponse audit --config configs/audit.yaml --offline  # re-render from cached artifacts
 ```
 
 Downloaded and derived data live in `data/` (git-ignored). Reports and manifests are committed.
-Set `HF_TOKEN` to avoid anonymous rate limits.
+`HF_TOKEN` in `.env` (git-ignored) is loaded by direnv and avoids anonymous rate limits.
 
 ## Status
 
