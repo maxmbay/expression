@@ -19,13 +19,12 @@ import numpy as np
 import polars as pl
 import pyarrow as pa
 import pyarrow.parquet as pq
-from huggingface_hub import HfFileSystem
 
 from cellresponse.data import audit as A
 from cellresponse.data.expression import shard_name
 from cellresponse.data.parse import strip_marker_batch
+from cellresponse.data.remote import RemoteParquet
 from cellresponse.data.select import CohortSpec, candidate_cells, plan_row_groups, select_cells
-from cellresponse.data.shards import remote_path
 from cellresponse.data.source import sha256sum
 
 OBS_FIELDS = [
@@ -111,10 +110,9 @@ def fetch(revision: str, chosen: pl.DataFrame, fragments: Path, workers: int) ->
     print(
         f"fetch: {len(jobs) - len(todo):,} shards already done, {len(todo):,} to fetch", flush=True
     )
-    fs = HfFileSystem()
     started, done_bytes, failures = time.time(), 0, []
     with ThreadPoolExecutor(max_workers=workers) as pool:
-        futures = {pool.submit(_fetch_shard, fs, revision, s, jobs[s], fragments): s for s in todo}
+        futures = {pool.submit(_fetch_shard, revision, s, jobs[s], fragments): s for s in todo}
         for i, future in enumerate(as_completed(futures), start=1):
             shard_id = futures[future]
             try:
@@ -145,68 +143,62 @@ def _fragment_path(fragments: Path, shard_id: int) -> Path:
 
 
 def _fetch_shard(
-    fs: HfFileSystem,
     revision: str,
     shard_id: int,
     rows: pl.DataFrame,
     fragments: Path,
-    attempts: int = 5,
+    attempts: int = 6,
 ) -> int:
     for attempt in range(attempts):
         try:
-            return _fetch_shard_once(fs, revision, shard_id, rows, fragments)
-        except Exception:
+            return _fetch_shard_once(revision, shard_id, rows, fragments)
+        except Exception as error:
             if attempt == attempts - 1:
                 raise
-            time.sleep(min(120, 5 * 2**attempt))
+            wait = min(120, 5 * 2**attempt)
+            print(f"retry shard {shard_id} in {wait}s after {error!r:.200}", flush=True)
+            time.sleep(wait)
     raise AssertionError("unreachable")
 
 
-def _fetch_shard_once(
-    fs: HfFileSystem, revision: str, shard_id: int, rows: pl.DataFrame, fragments: Path
-) -> int:
-    path = remote_path(revision, shard_name(shard_id))
-    tables, nbytes = [], 0
-    with fs.open(path, "rb", block_size=1 << 23, cache_type="none") as handle:
-        parquet = pq.ParquetFile(handle)
-        for (row_group,), wanted in rows.sort("row").group_by("row_group", maintain_order=True):
-            metadata = parquet.metadata.row_group(int(row_group))
-            nbytes += sum(
-                metadata.column(i).total_compressed_size
-                for i in range(metadata.num_columns)
-                if metadata.column(i).path_in_schema.split(".")[0]
-                in ("genes", "expressions", "BARCODE_SUB_LIB_ID")
+FETCH_COLUMNS = ("BARCODE_SUB_LIB_ID", "genes", "expressions")
+
+
+def _fetch_shard_once(revision: str, shard_id: int, rows: pl.DataFrame, fragments: Path) -> int:
+    remote = RemoteParquet(shard_name(shard_id), revision)
+    row_groups = sorted(int(g) for g in rows["row_group"].unique())
+    remote.fetch_row_groups(row_groups, FETCH_COLUMNS)
+    parquet = remote.parquet_file()
+    tables = []
+    for (row_group,), wanted in rows.sort("row").group_by("row_group", maintain_order=True):
+        table = parquet.read_row_group(
+            int(row_group), columns=["BARCODE_SUB_LIB_ID", "genes", "expressions"]
+        ).take(pa.array(wanted["row"].to_numpy()))
+        barcodes = table.column("BARCODE_SUB_LIB_ID").to_pylist()
+        if barcodes != wanted["BARCODE_SUB_LIB_ID"].to_list():
+            raise ValueError(f"shard {shard_id} rg {row_group}: barcode mismatch with location map")
+        genes = table.column("genes").combine_chunks()
+        counts = table.column("expressions").combine_chunks()
+        offsets, gene_values, count_values = strip_marker_batch(
+            genes.offsets.to_numpy(), genes.values.to_numpy(), counts.values.to_numpy()
+        )
+        arrow_offsets = pa.array(offsets.astype(np.int32))
+        tables.append(
+            pa.table(
+                {
+                    "cell_id": pa.array(wanted["obs_row"].to_numpy(), pa.uint32()),
+                    "BARCODE_SUB_LIB_ID": pa.array(barcodes, pa.string()),
+                    "genes": pa.ListArray.from_arrays(arrow_offsets, pa.array(gene_values)),
+                    "counts": pa.ListArray.from_arrays(arrow_offsets, pa.array(count_values)),
+                },
+                schema=FRAGMENT_SCHEMA,
             )
-            table = parquet.read_row_group(
-                int(row_group), columns=["BARCODE_SUB_LIB_ID", "genes", "expressions"]
-            ).take(pa.array(wanted["row"].to_numpy()))
-            barcodes = table.column("BARCODE_SUB_LIB_ID").to_pylist()
-            if barcodes != wanted["BARCODE_SUB_LIB_ID"].to_list():
-                raise ValueError(
-                    f"shard {shard_id} rg {row_group}: barcode mismatch with location map"
-                )
-            genes = table.column("genes").combine_chunks()
-            counts = table.column("expressions").combine_chunks()
-            offsets, gene_values, count_values = strip_marker_batch(
-                genes.offsets.to_numpy(), genes.values.to_numpy(), counts.values.to_numpy()
-            )
-            arrow_offsets = pa.array(offsets.astype(np.int32))
-            tables.append(
-                pa.table(
-                    {
-                        "cell_id": pa.array(wanted["obs_row"].to_numpy(), pa.uint32()),
-                        "BARCODE_SUB_LIB_ID": pa.array(barcodes, pa.string()),
-                        "genes": pa.ListArray.from_arrays(arrow_offsets, pa.array(gene_values)),
-                        "counts": pa.ListArray.from_arrays(arrow_offsets, pa.array(count_values)),
-                    },
-                    schema=FRAGMENT_SCHEMA,
-                )
-            )
+        )
     target = _fragment_path(fragments, shard_id)
     partial = target.with_suffix(".part")
     pq.write_table(pa.concat_tables(tables), partial, compression="zstd", compression_level=3)
     partial.replace(target)
-    return nbytes
+    return remote.bytes_fetched
 
 
 def build_cells(
@@ -254,7 +246,8 @@ def verify_counts(cells: pl.DataFrame, fragments: Path) -> None:
             .select(
                 pl.col("cell_id"),
                 pl.col("counts").list.sum().alias("total"),
-                pl.col("genes").list.len().alias("nnz"),
+                # gene_count counts expressed genes; a few cells store an explicit zero.
+                pl.col("counts").list.eval(pl.element() > 0).list.sum().alias("nnz"),
             )
             .collect()
             for path in sorted(fragments.glob("shard-*.parquet"))
