@@ -25,6 +25,7 @@ cellresponse = "cellresponse.cli:main"
 
 [tool.uv]
 dev-dependencies = [
+    "matplotlib>=3.11.2",
     "pytest>=8",
     "ruff>=0.7",
 ]
