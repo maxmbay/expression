@@ -14,7 +14,7 @@ A failed gate is a result to record, not a reason to change the test set.
 | M0 Audit | **Done** | Reproducible audit, verified cell-location map, feasible panels, footprints |
 | M1a Cohort freeze + data prep | **Done** | Prototype cohort on disk; counts match for 2,436,792 cells |
 | M1b Benchmark contract | **Done** | Splits, goals, queries, and the representation gate (direct module scores) |
-| M2 Baselines | Planned | Validation metrics for untreated, shared-shift, ridge, Gaussian |
+| M2 Baselines | **Done** | Shared shift leads validation; untreated tie goes to doing nothing |
 | M3 Distribution models | Planned | Mixture and flow selected on validation |
 | M4 Final evaluation | Planned | Locked rankings, test + replicate audits, three seeds |
 | M5 Portfolio | Planned | Explorer, model card, technical report |
@@ -93,6 +93,11 @@ Wasserstein, covariance discrepancies, sliced Wasserstein, and search metrics on
 **Landmark M2:** `reports/baselines.md` with per-condition validation metrics, plus the synthetic
 metric suite (correct-mean/wrong-variance, correct-marginals/wrong-dependence, equal-means/
 different-tails ranking) passing. *Laptop budget:* minutes per model.
+
+**Result (2026-10-17).** On 162 validation queries the shared compound-dose shift has mean
+top-1 observed utility 0.027 (Spearman 0.63; 0.80 on G2/M). Ridge is second. The conditional
+Gaussian and nearest-structure transfer do not beat doing nothing by a meaningful margin.
+Per-query rows are in `reports/tables/baseline_queries.csv`.
 
 ## M3: distribution models (JAX/Equinox/FlowJAX on CPU)
 

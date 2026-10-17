@@ -98,7 +98,9 @@ def run(config: dict) -> None:
     rows, dist_rows = _score_predictions(contexts, predictions, curves, directions, seed)
     table = pl.DataFrame(rows)
     dist = pl.DataFrame(dist_rows) if dist_rows else pl.DataFrame()
-    neighbor = _neighbor_report(joined, splits, fingerprints, curves, directions, seed)
+    neighbor = _neighbor_report(
+        joined, splits, fingerprints, curves, directions, seed, matrix, row_of
+    )
     report = _report(table, dist, curves, neighbor)
     Path("reports/baselines.md").write_text(report)
     table.write_parquet(prepared / "baseline_queries.parquet")
@@ -135,6 +137,9 @@ def _gather(matrix: np.ndarray, row_of: dict[int, int], cell_ids: list[int]) -> 
 
 
 def _fingerprints(compounds: pl.DataFrame) -> dict[str, np.ndarray]:
+    from rdkit import RDLogger
+
+    RDLogger.DisableLog("rdApp.*")
     found = {}
     for row in compounds.iter_rows(named=True):
         smiles = row["canonical_smiles"]
@@ -256,9 +261,11 @@ def _condition_vector(
     return np.concatenate([mean, log_sd, projected, np.array([dose, 1.0], dtype=np.float32)])
 
 
-def _ids_by_condition(frame: pl.DataFrame) -> dict[tuple, list[int]]:
+def _ids_by_condition(
+    frame: pl.DataFrame, keys: tuple[str, ...] = ("cell_line", "plate_num", "compound_key")
+) -> dict[tuple, list[int]]:
     grouped = {}
-    for key, part in frame.group_by("cell_line", "plate_num", "compound_key"):
+    for key, part in frame.group_by(list(keys)):
         grouped[key] = [int(cell_id) for cell_id in part["cell_id"].to_list()]
     return grouped
 
@@ -463,7 +470,12 @@ def _utility(samples, curves, columns, center, scale, direction, goal_id) -> flo
 
 
 def _rank_row(model, goal_id, context, ranking) -> dict:
-    order = sorted(ranking, key=lambda item: item["predicted"], reverse=True)
+    # On a tie, doing nothing wins. Otherwise every zero-utility model picks the first drug.
+    order = sorted(
+        ranking,
+        key=lambda item: (item["predicted"], item["compound_key"] is None),
+        reverse=True,
+    )
     pick = order[0]
     top5 = order[:5]
     best = max(item["observed"] for item in ranking)
@@ -500,22 +512,30 @@ def _subsample(values: np.ndarray, rng: np.random.Generator, n: int = 64) -> np.
     return values[rng.choice(values.shape[0], n, replace=False)]
 
 
-def _neighbor_report(joined, splits, fingerprints, curves, directions, seed) -> dict:
-    """Protocol C: transfer the shift of the nearest training structure."""
-    train_groups = splits.filter(
-        (pl.col("protocol_c") == "train")
-        & ~pl.col("is_control")
-        & (pl.col("plate_num") != HELD_OUT_PLATE)
+def _neighbor_report(
+    joined, splits, fingerprints, curves, directions, seed, matrix, row_of
+) -> dict:
+    """Protocol C transfers the shift of the nearest training structure."""
+    names = score_names()
+    train_groups = set(
+        splits.filter(
+            (pl.col("protocol_c") == "train")
+            & ~pl.col("is_control")
+            & (pl.col("plate_num") != HELD_OUT_PLATE)
+        )["structure_group"].to_list()
     )
-    val_groups = splits.filter(
+    val = splits.filter(
         (pl.col("protocol_c") == "validation")
         & ~pl.col("is_control")
         & (pl.col("plate_num") != HELD_OUT_PLATE)
     )
     group_fp = _group_fingerprints(splits, fingerprints)
-    train_keys = sorted({key for key in group_fp if _group_in(train_groups, key)})
-    if not train_keys:
-        return {"queries": 0}
+    train_keys = sorted(group for group in train_groups if group_fp.get(group) is not None)
+    neighbors = {}
+    for group, bits in group_fp.items():
+        if group in train_keys or bits is None:
+            continue
+        neighbors[group] = max(train_keys, key=lambda other: _tanimoto(bits, group_fp[other]))
     train = joined.filter(
         (pl.col("protocol_c") == "train")
         & ~pl.col("is_control")
@@ -525,25 +545,65 @@ def _neighbor_report(joined, splits, fingerprints, curves, directions, seed) -> 
         (pl.col("control_role") == "reference") & (pl.col("plate_num") != HELD_OUT_PLATE)
     )
     shift = _fit_shift(train, reference)
-    neighbors = {}
-    for group in group_fp:
-        if group in train_keys or group_fp[group] is None:
-            continue
-        neighbors[group] = max(
-            train_keys, key=lambda other: _tanimoto(group_fp[group], group_fp[other])
+    treated = _ids_by_condition(val)
+    solvent_ids = {
+        role: _ids_by_condition(
+            splits.filter(pl.col("control_role") == role), ("cell_line", "plate_num")
         )
-    blocks = val_groups.group_by("cell_line", "plate_num").agg(
-        pl.col("structure_group").n_unique().alias("n")
-    )
-    usable = blocks.filter(pl.col("n") >= 10).height
+        for role in ("reference", "evaluation")
+    }
+    contexts, predicted = [], {}
+    blocks = val.select(
+        "cell_line", "plate_num", "compound_key", "structure_group", "dose_uM"
+    ).unique()
+    for key, part in blocks.group_by("cell_line", "plate_num"):
+        line, plate = key
+        ref_ids = solvent_ids["reference"].get((line, plate), [])
+        eval_ids = solvent_ids["evaluation"].get((line, plate), [])
+        if not ref_ids or not eval_ids:
+            continue
+        reference_scores = _gather(matrix, row_of, ref_ids)
+        panel = []
+        for row in part.iter_rows(named=True):
+            neighbor = neighbors.get(row["structure_group"])
+            delta = shift.get((neighbor, round(float(row["dose_uM"]), 4))) if neighbor else None
+            cell_ids = [
+                cell_id
+                for cell_id in treated.get((line, plate, row["compound_key"]), [])
+                if cell_id in row_of
+            ]
+            if delta is None or not cell_ids:
+                continue
+            panel.append(
+                {
+                    "compound_key": row["compound_key"],
+                    "structure_group": row["structure_group"],
+                    "dose_uM": row["dose_uM"],
+                    "cell_ids": cell_ids,
+                    "observed": _gather(matrix, row_of, cell_ids),
+                    "fingerprint": fingerprints.get(row["compound_key"]),
+                }
+            )
+            predicted[(line, plate, row["compound_key"])] = reference_scores + delta
+        if len(panel) < 10:
+            continue
+        contexts.append(
+            {
+                "cell_line": line,
+                "plate_num": int(plate),
+                "reference": reference_scores,
+                "evaluation": _gather(matrix, row_of, eval_ids),
+                "panel": panel,
+            }
+        )
+    rows, _dist = _score_predictions(contexts, {"neighbor": predicted}, curves, directions, seed)
+    summary = pl.DataFrame(rows) if rows else pl.DataFrame()
     return {
-        "queries": int(usable),
+        "queries": summary.height if summary.height else 0,
         "held_out_groups": len(neighbors),
         "train_groups": len(train_keys),
-        "shift_keys": len(shift),
-        "seed": seed,
-        "curves": bool(curves),
-        "directions": int(len(directions)),
+        "summary": summary,
+        "score_names": names,
     }
 
 
@@ -554,10 +614,6 @@ def _group_fingerprints(splits, fingerprints) -> dict[str, np.ndarray | None]:
         if compound in fingerprints:
             grouped.setdefault(group, []).append(fingerprints[compound])
     return {group: (np.mean(bits, axis=0) if bits else None) for group, bits in grouped.items()}
-
-
-def _group_in(frame: pl.DataFrame, group: str) -> bool:
-    return frame.filter(pl.col("structure_group") == group).height > 0
 
 
 def _tanimoto(left: np.ndarray, right: np.ndarray) -> float:
@@ -620,9 +676,19 @@ def _report(table: pl.DataFrame, dist: pl.DataFrame, curves: dict, neighbor: dic
     lines += [
         "## Protocol C neighbor transfer",
         "",
-        f"Held-out structure groups with a fingerprint: {neighbor.get('held_out_groups', 0)}. "
-        f"Training groups: {neighbor.get('train_groups', 0)}. "
-        f"(line, plate) blocks with at least 10 candidates: {neighbor.get('queries', 0)}.",
+        "A held-out structure borrows the training shift of its nearest Morgan neighbor.",
+        "These blocks are not the protocol-A queries.",
+        "",
+        f"Held-out groups: {neighbor.get('held_out_groups', 0)}. "
+        f"Training groups: {neighbor.get('train_groups', 0)}.",
         "",
     ]
+    summary = neighbor.get("summary")
+    if summary is not None and summary.height:
+        collapsed = summary.group_by("goal_id").agg(
+            top1=pl.col("top1_observed").mean(),
+            spearman=pl.col("spearman").drop_nans().mean(),
+            queries=pl.len(),
+        )
+        lines += [md_table(collapsed.sort("goal_id")), ""]
     return "\n".join(lines)
