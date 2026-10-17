@@ -17,7 +17,7 @@ A failed gate is a result to record, not a reason to change the test set.
 | M2 Baselines | **Done** | Shared shift leads validation; untreated tie goes to doing nothing |
 | M3 Distribution models | **Done** | Flow inverse-checks pass; it does not beat the shared shift |
 | M4 Final evaluation | **Done** | Test rankings hashed first; +5pp gate does not pass |
-| M5 Portfolio | Planned | Explorer, model card, technical report |
+| M5 Portfolio | **Done** | Static explorer of the locked rankings and a model card |
 
 ## What M0 changed
 
@@ -140,6 +140,9 @@ write-up. Examples chosen by rule (median, strong, poor, high-disagreement, no-r
 
 **Landmark M5:** a fresh clone reproduces the reported tables from manifests, and the explorer
 refuses unsupported comparisons (cross-dose, cross-group, unseen lines).
+
+**Result (2026-10-17).** `app/index.html` shows the shared-shift ranking for one line on one
+plate and keeps the dose control disabled. `reports/model_card.md` states the failed gate.
 
 ## Later, only if earlier gates pass
 

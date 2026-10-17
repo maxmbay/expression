@@ -25,3 +25,7 @@ A 4-layer rational-quadratic coupling flow on the four residual module scores, t
 ## 2026-10-17 — M4 locked test
 
 Rankings for the test queries and plate 14 were written and hashed (`c5edff06c46241acd280691fed8d4f68ac832eb9ef1906f96a2382df7358ee72`) before the 308,483 test-treated cells were scored. The shared shift has no seed. On 207 test queries its mean top-1 utility is 0.0224, ridge is 0.0216, and doing nothing is 0. The margin is 0.0008, so the +5 point gate does not pass. Plate 14 transfer is 0.034 when the condition was seen in training and 0.013 when the pair was withheld.
+
+## 2026-10-17 — M5 explorer
+
+`app/index.html` lists the 207 locked test queries for the shared shift. Changing the query changes the ranking. The dose control stays disabled, and the page says cross-dose comparisons are refused. Measured utility is behind a button. The model card is `reports/model_card.md`. This is the end of the planned milestones: nothing beat the shared shift by the required margin.
