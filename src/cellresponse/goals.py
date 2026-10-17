@@ -66,9 +66,9 @@ class Goal:
     symbols: tuple[str, ...]
 
     def event_rule(self) -> str:
-        side = "<=" if self.direction == "down" else ">="
         return (
-            f"score {side} the q{self.quantile:.2f} of protocol-A training reference-vehicle scores"
+            f"logistic membership centered at the q{self.quantile:.2f} of protocol-A "
+            "training reference-vehicle scores, width equal to their standard deviation"
         )
 
 
@@ -91,6 +91,29 @@ def score_rows(matrix: np.ndarray, columns: np.ndarray) -> np.ndarray:
     if columns.size == 0:
         raise ValueError("goal has no genes in the scored space")
     return matrix[:, columns].mean(axis=1)
+
+
+SCALE_FLOOR = 1e-3
+
+
+def fit_soft(scores: np.ndarray, quantile: float) -> tuple[float, float]:
+    """Center and width of the membership curve, from training solvent scores only."""
+    threshold = float(np.quantile(scores, quantile))
+    scale = max(float(np.std(scores)), SCALE_FLOOR)
+    return threshold, scale
+
+
+def membership(scores: np.ndarray, threshold: float, scale: float, direction: str) -> np.ndarray:
+    """Smooth share. One at the goal side, zero on the other, one half at the solvent percentile."""
+    scale = max(float(scale), SCALE_FLOOR)
+    if direction == "down":
+        z = (threshold - scores) / scale
+    elif direction == "up":
+        z = (scores - threshold) / scale
+    else:
+        raise ValueError(f"unknown goal direction {direction!r}")
+    z = np.clip(z, -40.0, 40.0)
+    return 1.0 / (1.0 + np.exp(-z))
 
 
 def passes_event(scores: np.ndarray, threshold: float, direction: str) -> np.ndarray:

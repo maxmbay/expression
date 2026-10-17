@@ -80,7 +80,8 @@ the representation gate result is recorded in `reports/representation.md`.
 goals. Rank correlation is not: 0.64 for G2/M, 0.68 for p53, 0.70 for apoptosis, and 0.83 for
 interferon-gamma. Only 17–29% of each module's genes are among the 2,000 HVGs. Inverse search
 will model the module scores directly. PCA-64 remains the representation for distributional
-baselines. The test queries were not changed after the gate.
+baselines. The test queries were not changed after the gate. Rankings after this point use
+the soft membership in D11, not the hard event this gate measured.
 
 ## M2: baselines (CPU; NumPy/scikit-learn plus small JAX models)
 

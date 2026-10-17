@@ -27,6 +27,9 @@ def main(argv: list[str] | None = None) -> None:
     )
     split.add_argument("--config", required=True)
 
+    baselines = commands.add_parser("baselines", help="fit M2 baselines on validation queries")
+    baselines.add_argument("--config", required=True)
+
     args = parser.parse_args(argv)
     if args.command == "audit":
         from cellresponse.data.run_audit import run
@@ -40,6 +43,10 @@ def main(argv: list[str] | None = None) -> None:
         from cellresponse.contract import run as run_split
 
         run_split(load_config(args.config))
+    elif args.command == "baselines":
+        from cellresponse.baselines.run import run as run_baselines
+
+        run_baselines(load_config(args.config))
 
 
 if __name__ == "__main__":

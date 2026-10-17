@@ -38401,9 +38401,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -38981,9 +38981,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -39561,9 +39561,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -40141,9 +40141,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -40785,9 +40785,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -41429,9 +41429,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -42073,9 +42073,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -42717,9 +42717,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -43249,9 +43249,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -43781,9 +43781,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -44313,9 +44313,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -44845,9 +44845,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -45329,9 +45329,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -45813,9 +45813,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -46297,9 +46297,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -46781,9 +46781,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -47385,9 +47385,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -47989,9 +47989,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -48593,9 +48593,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -49197,9 +49197,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -49737,9 +49737,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -50277,9 +50277,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -50817,9 +50817,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -51357,9 +51357,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -51913,9 +51913,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -52469,9 +52469,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -53025,9 +53025,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -53581,9 +53581,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -54089,9 +54089,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -54597,9 +54597,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -55105,9 +55105,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -55613,9 +55613,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -56129,9 +56129,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -56645,9 +56645,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -57161,9 +57161,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -57677,9 +57677,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -58257,9 +58257,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -58837,9 +58837,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -59417,9 +59417,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -59997,9 +59997,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -60561,9 +60561,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -61125,9 +61125,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -61689,9 +61689,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -62253,9 +62253,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -62777,9 +62777,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -63301,9 +63301,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -63825,9 +63825,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -64349,9 +64349,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -64481,9 +64481,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -64613,9 +64613,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -64745,9 +64745,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -64877,9 +64877,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -64993,9 +64993,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -65109,9 +65109,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -65225,9 +65225,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -65341,9 +65341,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -65465,9 +65465,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -65589,9 +65589,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -65713,9 +65713,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -65837,9 +65837,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -65977,9 +65977,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -66117,9 +66117,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -66257,9 +66257,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -66397,9 +66397,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -66529,9 +66529,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -66661,9 +66661,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -66793,9 +66793,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -66925,9 +66925,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -67057,9 +67057,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -67189,9 +67189,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -67321,9 +67321,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -67453,9 +67453,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -67561,9 +67561,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -67669,9 +67669,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -67777,9 +67777,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -67885,9 +67885,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -68009,9 +68009,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -68133,9 +68133,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -68257,9 +68257,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -68381,9 +68381,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -68481,9 +68481,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -68581,9 +68581,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -68681,9 +68681,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -68781,9 +68781,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -68913,9 +68913,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -69045,9 +69045,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -69177,9 +69177,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -69309,9 +69309,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -69505,9 +69505,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -69701,9 +69701,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -69897,9 +69897,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -70093,9 +70093,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -70201,9 +70201,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -70309,9 +70309,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -70417,9 +70417,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -70525,9 +70525,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -70657,9 +70657,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -70789,9 +70789,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -70921,9 +70921,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -71053,9 +71053,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -71153,9 +71153,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -71253,9 +71253,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -71353,9 +71353,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -71453,9 +71453,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -71609,9 +71609,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -71765,9 +71765,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -71921,9 +71921,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -72077,9 +72077,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -72225,9 +72225,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -72373,9 +72373,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -72521,9 +72521,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -72669,9 +72669,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -72793,9 +72793,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -72917,9 +72917,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -73041,9 +73041,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -73165,9 +73165,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -73305,9 +73305,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -73445,9 +73445,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -73585,9 +73585,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -73725,9 +73725,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -73889,9 +73889,9 @@
         "direction": "down",
         "role": "objective",
         "quantile": 0.1,
-        "event": "score <= the q0.10 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.10 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -74053,9 +74053,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -74217,9 +74217,9 @@
         "direction": "up",
         "role": "constraint",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     },
@@ -74381,9 +74381,9 @@
         "direction": "up",
         "role": "objective",
         "quantile": 0.9,
-        "event": "score >= the q0.90 of protocol-A training reference-vehicle scores",
+        "event": "logistic membership centered at the q0.90 of protocol-A training reference-vehicle scores, width equal to their standard deviation",
         "score_definition": "mean log1p expression after normalizing the cell to 10,000 counts, over the goal's genes that are present in the vocabulary; a missing gene is zero",
-        "utility_definition": "treated event fraction minus the evaluation-vehicle event fraction on the same line and plate; the vehicle call has utility zero",
+        "utility_definition": "mean logistic membership minus the mean membership of the solvent call; the solvent call has utility zero. For an objective goal the apoptosis membership gain is subtracted with weight 1",
         "ranking": "descending utility; doing nothing is a candidate with utility zero"
       }
     }

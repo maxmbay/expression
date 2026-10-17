@@ -80,3 +80,13 @@ candidates per query. Under these thresholds, 591 of 650 (line, plate) blocks ar
 The installed uv is 0.4.9, which predates `[dependency-groups]`, so dev dependencies live in
 `[tool.uv] dev-dependencies`. The CLI uses argparse. The package is `cellresponse` (as in the
 brief) and the repository is `expression`.
+
+## D11. Soft membership instead of a hard event (2026-10-17)
+
+The utility is the mean of a logistic membership, not the fraction of cells past a cutoff.
+The curve is centered at the training reference-vehicle quantile (10th percentile for G2/M,
+90th for p53, interferon-gamma, and apoptosis) and its width is the standard deviation of
+those solvent scores, floored at 1e-3. Ranking utility for an objective goal subtracts the
+apoptosis membership gain with weight 1. Both parameters are fit on protocol-A training
+reference wells only. The representation gate in `reports/representation.md` remains the
+hard-event comparison that was already run; it is not recomputed.

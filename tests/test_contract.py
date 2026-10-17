@@ -3,7 +3,7 @@ import polars as pl
 import pytest
 
 from cellresponse.features.fit import choose_hvg
-from cellresponse.goals import goals, passes_event
+from cellresponse.goals import fit_soft, goals, membership, passes_event
 from cellresponse.queries import FORBIDDEN_KEYS, build_documents, check_query_document
 from cellresponse.split import (
     ANCHOR_COMPOUND,
@@ -127,6 +127,14 @@ def test_goal_membership_is_the_hallmark_list():
     assert by_id["apoptosis_constraint"].role == "constraint"
     assert passes_event(np.array([0.1, 0.5]), 0.2, "down").tolist() == [True, False]
     assert passes_event(np.array([0.1, 0.5]), 0.2, "up").tolist() == [False, True]
+    solvent = np.array([-1.0, -0.5, 0.0, 0.5, 1.0])
+    center, scale = fit_soft(solvent, 0.9)
+    at_center = membership(np.array([center]), center, scale, "up")
+    above = membership(np.array([center + 8 * scale]), center, scale, "up")
+    below = membership(np.array([center - 8 * scale]), center, scale, "up")
+    assert np.isclose(at_center, 0.5).all()
+    assert above > 0.99
+    assert below < 0.01
 
 
 def _keys(value):

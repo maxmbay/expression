@@ -46,8 +46,9 @@ SCORING_TEXT = {
         "over the goal's genes that are present in the vocabulary; a missing gene is zero"
     ),
     "utility_definition": (
-        "treated event fraction minus the evaluation-vehicle event fraction "
-        "on the same line and plate; the vehicle call has utility zero"
+        "mean logistic membership minus the mean membership of the solvent call; "
+        "the solvent call has utility zero. For an objective goal the apoptosis membership gain "
+        "is subtracted with weight 1"
     ),
     "ranking": "descending utility; doing nothing is a candidate with utility zero",
 }
