@@ -29,7 +29,10 @@ def read_row_group(revision: str, shard_id: int, row_group: int, fs: HfFileSyste
 
 
 def to_csr(table, token_to_col: dict[int, int]) -> tuple[sparse.csr_matrix, pl.DataFrame, dict]:
-    """Parse rows into a cells x genes CSR matrix; unknown tokens are counted, never silently kept."""
+    """Parse rows into a cells x genes CSR matrix.
+
+    Unknown tokens are counted and never silently kept.
+    """
     genes_col = table.column("genes").combine_chunks()
     expr_col = table.column("expressions").combine_chunks()
     offsets = genes_col.offsets.to_numpy()
@@ -45,7 +48,9 @@ def to_csr(table, token_to_col: dict[int, int]) -> tuple[sparse.csr_matrix, pl.D
         genes, counts = strip_marker(
             all_genes[offsets[i] : offsets[i + 1]], all_counts[offsets[i] : offsets[i + 1]]
         )
-        cols = np.fromiter((token_to_col.get(int(g), -1) for g in genes), dtype=np.int64, count=genes.size)
+        cols = np.fromiter(
+            (token_to_col.get(int(g), -1) for g in genes), dtype=np.int64, count=genes.size
+        )
         known = cols >= 0
         unknown_tokens += int((~known).sum())
         unknown_counts += float(counts[~known].sum())

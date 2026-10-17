@@ -26,7 +26,9 @@ def load_samples(raw: Path) -> pl.DataFrame:
     samples = pl.read_parquet(raw / "metadata/sample_metadata.parquet")
     parsed = [parse_drugname_drugconc(s) for s in samples["drugname_drugconc"]]
     if any(len(p) != 1 for p in parsed):
-        raise ValueError("expected exactly one treatment per sample; combinations need a new schema")
+        raise ValueError(
+            "expected exactly one treatment per sample; combinations need a new schema"
+        )
     return samples.with_columns(
         plate_num=plate_number(),
         treatment_name=pl.Series([p[0].name for p in parsed]),
@@ -40,7 +42,10 @@ def load_samples(raw: Path) -> pl.DataFrame:
 
 
 def aggregate_cells(raw: Path, out: Path) -> pl.DataFrame:
-    """Per (plate, sample, line, sublibrary, pass_filter) cell counts from the 100M-row obs table."""
+    """Per (plate, sample, line, sublibrary, pass_filter) cell counts.
+
+    Counts come from the 100M-row obs table.
+    """
     if out.exists():
         return pl.read_parquet(out)
     counts = (
@@ -84,7 +89,14 @@ def well_line_counts(cells: pl.DataFrame, samples: pl.DataFrame) -> pl.DataFrame
         .with_columns(mean_tscp_full=pl.col("tscp_full") / pl.col("n_full"))
     )
     keys = samples.select(
-        "sample", "plate", "plate_num", "plate_group", "drug", "compound_key", "dose_uM", "is_control"
+        "sample",
+        "plate",
+        "plate_num",
+        "plate_group",
+        "drug",
+        "compound_key",
+        "dose_uM",
+        "is_control",
     )
     return wide.join(keys, on="sample", how="left", validate="m:1")
 
@@ -100,13 +112,17 @@ def control_support(wl: pl.DataFrame, min_control: int) -> pl.DataFrame:
         min_well_cells=pl.col("control_cells_per_well").list.min(),
         control_eligible=pl.col("control_cells") >= min_control,
         well_split_possible=pl.col("control_cells_per_well").list.min() >= min_control // 2,
-    )
+    ).sort("plate_num", "cell_line")
 
 
 def candidate_panels(
-    wl: pl.DataFrame, controls: pl.DataFrame, min_treated: int, test_fraction: float, min_candidates: int
+    wl: pl.DataFrame,
+    controls: pl.DataFrame,
+    min_treated: int,
+    test_fraction: float,
+    min_candidates: int,
 ) -> pl.DataFrame:
-    """Per (line, single-dose plate) query block: eligible treated candidates sharing one reference."""
+    """Eligible treated candidates per (line, single-dose plate), sharing one reference."""
     treated = wl.filter(~pl.col("is_control") & (pl.col("plate_num") != 13))
     panels = (
         treated.group_by("plate_num", "plate_group", "cell_line", "cell_name")
@@ -141,7 +157,10 @@ def rank_lines(panels: pl.DataFrame, wl: pl.DataFrame) -> pl.DataFrame:
     )
     return (
         per_line.join(feasibility, on="cell_line", how="left")
-        .sort(["feasible_plates", "min_control_cells", "frac_wells_ge_128"], descending=True)
+        .sort(
+            ["feasible_plates", "min_control_cells", "frac_wells_ge_128", "cell_line"],
+            descending=[True, True, True, False],
+        )
         .with_row_index("line_rank", offset=1)
     )
 
@@ -174,9 +193,11 @@ def replicate_structure(samples: pl.DataFrame) -> dict[str, pl.DataFrame]:
         }
     )
     return {
-        "repeated_conditions": repeated.sort("n_wells", "drug", descending=[True, False]),
-        "pair_6_14": pair_6_14,
-        "plate13": plate13.sort("primary_plate", "drug"),
+        "repeated_conditions": repeated.sort(
+            "n_wells", "drug", "dose_uM", descending=[True, False, False]
+        ),
+        "pair_6_14": pair_6_14.sort("drug", "dose_uM"),
+        "plate13": plate13.sort("primary_plate", "drug", "dose_uM", "sample", nulls_last=True),
         "summary_6_14": summary,
     }
 
@@ -226,12 +247,18 @@ def compound_audit(raw: Path, samples: pl.DataFrame) -> dict[str, pl.DataFrame]:
     sample_names = samples.filter(~pl.col("is_control")).select("drug", "compound_key").unique()
     raw_name_mismatches = sample_names.join(chem.select("drug"), on="drug", how="anti")
     unmatched = sample_names.join(chem.select("compound_key"), on="compound_key", how="anti")
-    key_collisions = chem.group_by("compound_key").agg(pl.col("drug")).filter(pl.col("drug").list.len() > 1)
+    key_collisions = (
+        chem.group_by("compound_key").agg(pl.col("drug")).filter(pl.col("drug").list.len() > 1)
+    )
     parent_duplicates = (
         chem.filter(pl.col("inchikey_parent").is_not_null())
         .group_by("inchikey_parent")
-        .agg(pl.col("drug"), pl.col("inchikey_full").n_unique().alias("distinct_full_structures"))
+        .agg(
+            pl.col("drug").sort(),
+            pl.col("inchikey_full").n_unique().alias("distinct_full_structures"),
+        )
         .filter(pl.col("drug").list.len() > 1)
+        .sort(pl.col("drug").list.first())
     )
     treatment_name_variants = (
         samples.filter(~pl.col("is_control"))
@@ -263,6 +290,7 @@ def sublibrary_composition(cells: pl.DataFrame) -> pl.DataFrame:
         cells=pl.col("total_sub").first(),
         tv_distance=(pl.col("p_sub") - pl.col("p_well")).abs().sum() / 2,
     )
+    tv = tv.sort("sample", "sublibrary")
     return tv.join(_multinomial_null_tv(well, tv), on=["sample", "sublibrary"], how="left")
 
 
@@ -270,7 +298,8 @@ def _multinomial_null_tv(well: pl.DataFrame, tv: pl.DataFrame, seed: int = 0) ->
     """TV distance expected if each sublibrary were a multinomial draw from its well's line mix."""
     rng = np.random.default_rng(seed)
     probabilities = {
-        sample[0]: frame["p_well"].to_numpy() for sample, frame in well.sort("cell_line").group_by("sample")
+        sample[0]: frame["p_well"].to_numpy()
+        for sample, frame in well.sort("cell_line").group_by("sample")
     }
     rows = []
     for sample, sublibrary, cells in tv.select("sample", "sublibrary", "cells").iter_rows():

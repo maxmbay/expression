@@ -79,3 +79,38 @@ def strip_marker(genes: np.ndarray, counts: np.ndarray) -> tuple[np.ndarray, np.
     if np.unique(genes).size != genes.size:
         raise ValueError("duplicate gene tokens within a cell")
     return genes, counts
+
+
+def strip_marker_batch(
+    offsets: np.ndarray, genes: np.ndarray, counts: np.ndarray
+) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """Vectorized `strip_marker` over list-column buffers (Arrow offsets + flat values).
+
+    Returns new offsets, int32 gene tokens, and int32 counts with each row's marker removed.
+    """
+    offsets = np.asarray(offsets, dtype=np.int64)
+    if genes.shape != counts.shape or offsets[-1] != genes.size:
+        raise ValueError("genes and expressions buffers are misaligned")
+    starts = offsets[:-1]
+    if np.any(offsets[1:] <= starts):
+        raise ValueError("empty row: missing marker entry")
+    if np.any(genes[starts] != MARKER_TOKEN) or not np.all(counts[starts] < 0):
+        bad = int(np.flatnonzero((genes[starts] != MARKER_TOKEN) | ~(counts[starts] < 0))[0])
+        raise ValueError(
+            f"row {bad}: expected leading marker token {MARKER_TOKEN} with negative value"
+        )
+    keep = np.ones(genes.size, dtype=bool)
+    keep[starts] = False
+    genes, counts = genes[keep], counts[keep]
+    new_offsets = offsets - np.arange(offsets.size, dtype=np.int64)
+    if not np.all(np.isfinite(counts)):
+        raise ValueError("non-finite counts after marker removal")
+    if np.any(counts < 0):
+        raise ValueError("negative counts after marker removal")
+    if np.any(counts != np.round(counts)):
+        raise ValueError("non-integer counts after marker removal")
+    rows = np.repeat(np.arange(offsets.size - 1), np.diff(new_offsets))
+    order = np.lexsort((genes, rows))
+    if np.any((np.diff(rows[order]) == 0) & (np.diff(genes[order]) == 0)):
+        raise ValueError("duplicate gene tokens within a cell")
+    return new_offsets, genes.astype(np.int32), counts.astype(np.int32)

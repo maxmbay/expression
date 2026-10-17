@@ -5,6 +5,7 @@ from cellresponse.data.parse import (
     normalize_compound_name,
     parse_drugname_drugconc,
     strip_marker,
+    strip_marker_batch,
     to_micromolar,
 )
 
@@ -63,3 +64,30 @@ def test_strip_marker_removes_leading_entry():
 def test_strip_marker_rejects_invalid_rows(genes, counts):
     with pytest.raises(ValueError):
         strip_marker(np.array(genes), np.array(counts))
+
+
+def test_batch_matches_row_parser():
+    rows = [([1, 5, 19], [-2.0, 1.0, 3.0]), ([1, 7], [-2.0, 4.0]), ([1, 3, 9, 11], [-2.0, 1, 1, 2])]
+    offsets = np.cumsum([0] + [len(g) for g, _ in rows])
+    genes = np.concatenate([g for g, _ in rows])
+    counts = np.concatenate([c for _, c in rows]).astype(np.float32)
+    new_offsets, out_genes, out_counts = strip_marker_batch(offsets, genes, counts)
+    for i, (g, c) in enumerate(rows):
+        exp_g, exp_c = strip_marker(np.array(g), np.array(c))
+        sl = slice(new_offsets[i], new_offsets[i + 1])
+        assert out_genes[sl].tolist() == exp_g.tolist()
+        assert out_counts[sl].tolist() == exp_c.tolist()
+
+
+@pytest.mark.parametrize(
+    "genes,counts",
+    [
+        ([1, 5, 5, 19], [-2.0, 1.0, 1.0, 3.0]),  # second row has no marker
+        ([1, 5, 1, 5, 5], [-2.0, 1.0, -2.0, 1.0, 2.0]),  # duplicate token in row 2
+        ([1, 5, 1, 6, 7], [-2.0, 1.0, -2.0, -1.0, 2.0]),  # negative count
+    ],
+)
+def test_batch_rejects_invalid_rows(genes, counts):
+    offsets = np.array([0, 2, len(genes)])
+    with pytest.raises(ValueError):
+        strip_marker_batch(offsets, np.array(genes), np.array(counts, dtype=np.float32))

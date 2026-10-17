@@ -17,11 +17,20 @@ def main(argv: list[str] | None = None) -> None:
         help="reuse downloaded metadata, shard index, and expression check",
     )
 
+    prepare = commands.add_parser(
+        "prepare", help="fetch a frozen cohort and write canonical tables"
+    )
+    prepare.add_argument("--config", required=True)
+
     args = parser.parse_args(argv)
     if args.command == "audit":
         from cellresponse.data.run_audit import run
 
         run(load_config(args.config), skip_network=args.offline)
+    elif args.command == "prepare":
+        from cellresponse.data.prepare import run as run_prepare
+
+        run_prepare(load_config(args.config))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,33 @@
+# Smoke cohort: validates parsing, splits, losses, sampling, and metrics. No search claims.
+name: smoke
+source:
+  repo_id: tahoebio/Tahoe-100M
+  revision: 349e2a55f5538a3e73b32a06c6bdd8e9e87011e8
+
+paths:
+  raw: data/raw/tahoe-100m
+  interim: data/interim
+  prepared: data/prepared
+
+cohort:
+  plates: [6]
+  lines: [CVCL_0480, CVCL_0546, CVCL_1056, CVCL_1285]   # PANC-1, SW480, A498, HOP62
+  compounds:   # 12 group-B compounds chosen by hash, not by response (reports/candidate_cohorts.json)
+    - busulfan
+    - vilanterol
+    - fluvoxamine (maleate)
+    - berberine (chloride hydrate)
+    - bergenin
+    - bimatoprost
+    - l-thyroxine (sodium salt pentahydrate)
+    - gallic acid (hydrate)
+    - relugolix
+    - 18β-glycyrrhetinic acid
+    - berbamine
+    - gemfibrozil
+  treated_cap: 128
+  control_cap: 512
+  seed: 0
+
+download:
+  workers: 8

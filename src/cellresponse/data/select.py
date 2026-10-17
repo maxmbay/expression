@@ -66,11 +66,20 @@ def plan_row_groups(cells: pl.DataFrame, spec: CohortSpec) -> pl.DataFrame:
     reach = per_group.group_by("sample", "cell_line").agg(
         reach=pl.when(pl.col("cap").first().is_null())
         .then(pl.col("key").max())
-        .otherwise(pl.col("key").filter(pl.col("cum") >= pl.col("cap")).min().fill_null(pl.col("key").max()))
+        .otherwise(
+            pl.col("key")
+            .filter(pl.col("cum") >= pl.col("cap"))
+            .min()
+            .fill_null(pl.col("key").max())
+        )
     )
     cutoff = reach.group_by("sample").agg(cutoff=pl.col("reach").max())
     groups = per_group.select("sample", "rg_id", "key").unique()
-    return groups.join(cutoff, on="sample").filter(pl.col("key") <= pl.col("cutoff")).select("sample", "rg_id")
+    return (
+        groups.join(cutoff, on="sample")
+        .filter(pl.col("key") <= pl.col("cutoff"))
+        .select("sample", "rg_id")
+    )
 
 
 def select_cells(cells: pl.DataFrame, visit: pl.DataFrame, spec: CohortSpec) -> pl.DataFrame:
@@ -92,7 +101,11 @@ def _cap_expr(spec: CohortSpec) -> pl.Expr:
 
 
 def footprint_summary(index: pl.DataFrame, visit: pl.DataFrame, selected: pl.DataFrame) -> dict:
-    index = index.sort("shard", "row_group").with_row_index("rg_id").with_columns(pl.col("rg_id").cast(pl.Int32))
+    index = (
+        index.sort("shard", "row_group")
+        .with_row_index("rg_id")
+        .with_columns(pl.col("rg_id").cast(pl.Int32))
+    )
     groups = index.join(visit.select("rg_id").unique(), on="rg_id", how="semi")
     shards = groups["shard"].unique()
     shard_bytes = index.filter(pl.col("shard").is_in(shards.implode())).group_by("shard").agg(

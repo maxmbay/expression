@@ -54,10 +54,16 @@ def build_locations(obs_path: Path, index: pl.DataFrame) -> pl.DataFrame:
     )
     missing = set(full["sublibrary"].unique()) - set(order)
     if missing:
-        raise ValueError(f"{len(missing)} sublibraries have no pure row group, e.g. {sorted(missing)[:3]}")
-    full = full.join(ranks, on="sublibrary", how="left").sort("sub_rank", "obs_row", maintain_order=True)
+        raise ValueError(
+            f"{len(missing)} sublibraries have no pure row group, e.g. {sorted(missing)[:3]}"
+        )
+    full = full.join(ranks, on="sublibrary", how="left").sort(
+        "sub_rank", "obs_row", maintain_order=True
+    )
     if full.height != int(index["num_rows"].sum()):
-        raise ValueError(f"{full.height} retained obs rows vs {index['num_rows'].sum()} expression rows")
+        raise ValueError(
+            f"{full.height} retained obs rows vs {index['num_rows'].sum()} expression rows"
+        )
     starts = np.concatenate([[0], np.cumsum(index["num_rows"].to_numpy())[:-1]])
     position = np.arange(full.height, dtype=np.int64)
     rg_id = np.searchsorted(starts, position, side="right") - 1
@@ -90,7 +96,7 @@ def verify_locations(obs_path: Path, index: pl.DataFrame, locations: pl.DataFram
         .join(obs, on="obs_row", how="left")
         .group_by("rg_id")
         .agg(
-            n=pl.len(),
+            pl.len().alias("n"),
             *[pl.col(src).min().alias(f"{dst}_pmin") for dst, src in VERIFIED_COLUMNS.items()],
             *[pl.col(src).max().alias(f"{dst}_pmax") for dst, src in VERIFIED_COLUMNS.items()],
         )

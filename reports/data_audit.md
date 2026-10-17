@@ -93,28 +93,28 @@ excluded, never as "no response".
 
 | drug | distinct_full_structures |
 | --- | --- |
-| Bestatin, Bestatin (hydrochloride) | 2 |
-| Pyridoxine, Pyridoxine (hydrochloride) | 2 |
-| Glycyrrhizic acid, Diammonium Glycyrrhizinate | 2 |
-| Larotrectinib, Larotrectinib sulfate | 2 |
-| Docetaxel, Docetaxel (Trihydrate) | 2 |
-| Belumosudil, Belumosudil (mesylate) | 2 |
-| Doxorubicin (hydrochloride), Epirubicin (hydrochloride) | 1 |
-| Trametinib, Trametinib (DMSO_TF solvate) | 1 |
+| (R)-Verapamil (hydrochloride), Verapamil | 2 |
+| (S)-Crizotinib, Crizotinib (hydrochloride), crizotinib | 2 |
 | Almonertinib (hydrochloride), Almonertinib (mesylate) | 2 |
-| Rimonabant, Rimonabant (Hydrochloride) | 2 |
-| Neratinib, Neratinib (maleate) | 2 |
-| Verapamil, (R)-Verapamil (hydrochloride) | 2 |
+| Belumosudil, Belumosudil (mesylate) | 2 |
 | Berbamine, Berbamine (dihydrochloride) | 2 |
+| Bestatin, Bestatin (hydrochloride) | 2 |
 | Cytarabine, Cytarabine (hydrochloride) | 2 |
-| Imiquimod (maleate), Imiquimod (hydrochloride) | 2 |
-| crizotinib, (S)-Crizotinib, Crizotinib (hydrochloride) | 2 |
-| Fluvoxamine, Fluvoxamine (maleate) | 2 |
-| Irinotecan, Irinotecan (hydrochloride) | 2 |
-| Tirabrutinib, Tirabrutinib (hydrochloride) | 2 |
 | Dapagliflozin, Dapagliflozin ((2S)-1,2-propanediol, hydrate) | 2 |
-| Tofacitinib, Tofacitinib (citrate) | 2 |
+| Diammonium Glycyrrhizinate, Glycyrrhizic acid | 2 |
+| Docetaxel, Docetaxel (Trihydrate) | 2 |
+| Doxorubicin (hydrochloride), Epirubicin (hydrochloride) | 1 |
+| Fluvoxamine, Fluvoxamine (maleate) | 2 |
 | Gallic acid, Gallic acid (hydrate) | 2 |
+| Imiquimod (hydrochloride), Imiquimod (maleate) | 2 |
+| Irinotecan, Irinotecan (hydrochloride) | 2 |
+| Larotrectinib, Larotrectinib sulfate | 2 |
+| Neratinib, Neratinib (maleate) | 2 |
+| Pyridoxine, Pyridoxine (hydrochloride) | 2 |
+| Rimonabant, Rimonabant (Hydrochloride) | 2 |
+| Tirabrutinib, Tirabrutinib (hydrochloride) | 2 |
+| Tofacitinib, Tofacitinib (citrate) | 2 |
+| Trametinib, Trametinib (DMSO_TF solvate) | 1 |
 
 Doxorubicin and Epirubicin are epimers; the provided SMILES omit stereochemistry and collapse
 them. Structure-grouped splits will treat them as one group, which is conservative.

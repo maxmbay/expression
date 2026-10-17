@@ -46,7 +46,9 @@ def footer_rows(fs: HfFileSystem, revision: str, repo_path: str) -> list[dict]:
             "num_rows": group.num_rows,
             "compressed_bytes": sum(c.total_compressed_size for c in columns.values()),
             "expression_bytes": sum(
-                c.total_compressed_size for n, c in columns.items() if n.startswith(("genes", "expressions"))
+                c.total_compressed_size
+                for n, c in columns.items()
+                if n.startswith(("genes", "expressions"))
             ),
         }
         for name in STAT_COLUMNS:

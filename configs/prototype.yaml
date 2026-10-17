@@ -1,0 +1,33 @@
+# Main prototype cohort (DECISIONS.md D6). Frozen once prepared; splits are built on top of it.
+name: prototype
+source:
+  repo_id: tahoebio/Tahoe-100M
+  revision: 349e2a55f5538a3e73b32a06c6bdd8e9e87011e8
+
+paths:
+  raw: data/raw/tahoe-100m
+  interim: data/interim
+  prepared: data/prepared
+
+cohort:
+  plates: [4, 5, 6, 7, 8, 9, 14]   # compound groups B and C, plus the plate-6 technical repeat
+  lines:
+    - CVCL_0480  # PANC-1
+    - CVCL_0546  # SW480
+    - CVCL_1056  # A498
+    - CVCL_1285  # HOP62
+    - CVCL_0359  # J82
+    - CVCL_0459  # NCI-H460
+    - CVCL_0399  # LoVo
+    - CVCL_0023  # A549
+    - CVCL_1119  # CFPAC-1
+    - CVCL_1381  # LOX-IMVI
+    - CVCL_1550  # NCI-H2347
+    - CVCL_0320  # HT-29
+  compounds: null        # every compound on these plates, including the Adagrasib anchor wells
+  treated_cap: 256
+  control_cap: null      # keep every vehicle cell
+  seed: 0
+
+download:
+  workers: 8
