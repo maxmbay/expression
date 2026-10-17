@@ -38,6 +38,27 @@ def goal_weights(genes: pl.DataFrame) -> np.ndarray:
     return weight
 
 
+def score_cells(prepared: Path, genes: pl.DataFrame, cell_ids: pl.Series) -> pl.DataFrame:
+    """Score these cells. Call this only after the test rankings have been hashed."""
+    cells = pl.read_parquet(
+        prepared / "cells.parquet", columns=["cell_id", "library_size", "fragment"]
+    ).join(pl.DataFrame({"cell_id": cell_ids}), on="cell_id", how="semi")
+    if cells.height == 0:
+        raise RuntimeError("no cells to score")
+    frame = cells.with_columns(scale=pl.lit(10_000.0) / pl.col("library_size"))
+    weight = goal_weights(genes)
+    known = np.zeros(weight.shape[0], dtype=bool)
+    known[genes["token_id"].to_numpy()] = True
+    pieces = [
+        _score_fragment(prepared / "fragments" / fragment, part, weight, known)
+        for fragment, part in _by_fragment(frame)
+    ]
+    scored = pl.concat(pieces)
+    if scored.height != frame.height:
+        raise RuntimeError(f"scored {scored.height} of {frame.height} cells")
+    return scored
+
+
 def ensure_scores(prepared: Path, genes: pl.DataFrame) -> pl.DataFrame:
     path = prepared / "module_scores.parquet"
     meta_path = prepared / "module_scores.json"

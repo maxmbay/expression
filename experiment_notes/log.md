@@ -21,3 +21,7 @@ The validation-selected model for a later test ranking is the shared shift. A fl
 ## 2026-10-17 — M3 flow
 
 A 4-layer rational-quadratic coupling flow on the four residual module scores, trained for 6 epochs on 60,000 training cells. Inverse error 1.2e-7. Holdout NLL fell from 5.03 to 4.76. Mean validation top-1 utility was 0.002, against 0.026 for the shared shift, and it ranked near chance (Spearman about 0.1). The selected model stays the shared shift. Three flow seeds were not run: the first seed is not a finalist.
+
+## 2026-10-17 — M4 locked test
+
+Rankings for the test queries and plate 14 were written and hashed (`c5edff06c46241acd280691fed8d4f68ac832eb9ef1906f96a2382df7358ee72`) before the 308,483 test-treated cells were scored. The shared shift has no seed. On 207 test queries its mean top-1 utility is 0.0224, ridge is 0.0216, and doing nothing is 0. The margin is 0.0008, so the +5 point gate does not pass. Plate 14 transfer is 0.034 when the condition was seen in training and 0.013 when the pair was withheld.

@@ -35,6 +35,11 @@ def main(argv: list[str] | None = None) -> None:
     )
     flow.add_argument("--config", required=True)
 
+    evaluate = commands.add_parser(
+        "evaluate", help="hash test rankings, then score test-treated cells"
+    )
+    evaluate.add_argument("--config", required=True)
+
     args = parser.parse_args(argv)
     if args.command == "audit":
         from cellresponse.data.run_audit import run
@@ -56,6 +61,10 @@ def main(argv: list[str] | None = None) -> None:
         from cellresponse.flow_train import run as run_flow
 
         run_flow(load_config(args.config))
+    elif args.command == "evaluate":
+        from cellresponse.evaluate import run as run_evaluate
+
+        run_evaluate(load_config(args.config))
 
 
 if __name__ == "__main__":

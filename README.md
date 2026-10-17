@@ -106,9 +106,9 @@ Each group is a stage, and the shape says what a box is. Cylinders are data kept
 
 | | |
 | --- | --- |
-| Done | Audits, the prototype cohort (12 lines, plates 4–9 and 14, 2,436,792 cells), frozen splits, four goals, and the representation gate |
-| Next | Baselines on the validation queries |
-| Specified, not built | Flow on the module scores, plate search, cross-plate search |
+| Done | Audits, the prototype cohort, the contract, baselines, a module-score flow, and the locked test |
+| Result | The shared shift leads. Its test margin over the next baseline is 0.08 points, so the +5 point gate does not pass |
+| Specified, not built | A search that beats the shift, and cross-plate search |
 
 ## Run
 

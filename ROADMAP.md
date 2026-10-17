@@ -16,7 +16,7 @@ A failed gate is a result to record, not a reason to change the test set.
 | M1b Benchmark contract | **Done** | Splits, goals, queries, and the representation gate (direct module scores) |
 | M2 Baselines | **Done** | Shared shift leads validation; untreated tie goes to doing nothing |
 | M3 Distribution models | **Done** | Flow inverse-checks pass; it does not beat the shared shift |
-| M4 Final evaluation | Planned | Locked rankings, test + replicate audits, three seeds |
+| M4 Final evaluation | **Done** | Test rankings hashed first; +5pp gate does not pass |
 | M5 Portfolio | Planned | Explorer, model card, technical report |
 
 ## What M0 changed
@@ -125,6 +125,12 @@ Adagrasib anchor across plates.
 
 **Landmark M4:** `reports/benchmark.md` including failures and cases where no candidate beats
 vehicle; replicate audit reported regardless of direction.
+
+**Result (2026-10-17).** Test rankings were hashed before test-treated scores were computed
+(`reports/test_rankings.sha256`). The shared shift's mean top-1 utility is 0.022 against 0.022
+for ridge and 0 for doing nothing. The margin is 0.08 points, so the +5 point gate does not
+pass. On plate 14 the same shift is 0.034 for conditions seen in training and 0.013 for pairs
+that were withheld.
 
 ## M5: portfolio
 
