@@ -1,0 +1,5 @@
+cohort,row_groups,shards,rowgroup_download_gb,whole_shard_download_gb,selected_cells,selected_control_cells
+"smoke: plate 6, 4 lines, 12 compounds, cap 128 / controls 512",254,169,0.97,19.36,10240,4096
+"group B + plate 14, 12 lines, cap 256",7780,926,27.47,95.11,1404119,252484
+"groups B + C + plate 14, 12 lines, cap 256",13737,1610,46.84,160.55,2436792,419116
+"all 13 single-dose plates, 12 lines, cap 256",25898,3100,87.74,309.21,4550917,842503

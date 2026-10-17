@@ -1,0 +1,124 @@
+sample,plate,mean_gene_count,mean_tscp_count,mean_mread_count,mean_pcnt_mito,drug,drugname_drugconc,plate_num,treatment_name,dose_uM,dose_unit_raw,is_control,compound_key,plate_group,primary_plate,primary_sample
+smp_2741,plate13,1345.8138234784117,2150.275956303104,2497.3542084272585,0.07463004,Carbidopa (monohydrate),"[('Carbidopa (monohydrate)', 0.05, 'uM')]",13,Carbidopa (monohydrate),0.05,uM,false,carbidopa (monohydrate),mixed,,
+smp_2717,plate13,1380.2881304407904,2199.1779650868225,2555.451678872461,0.065778434,Carbidopa (monohydrate),"[('Carbidopa (monohydrate)', 5.0, 'uM')]",13,Carbidopa (monohydrate),5.0,uM,false,carbidopa (monohydrate),mixed,,
+smp_2729,plate13,1553.7067198323236,2592.388160417146,3015.25970656647,0.05823456,Carbidopa (monohydrate),"[('Carbidopa (monohydrate)', 0.5, 'uM')]",13,Carbidopa (monohydrate),0.5,uM,false,carbidopa (monohydrate),mixed,,
+smp_2707,plate13,1601.0903870669329,2688.9918886294154,3123.3094617614875,0.061870072,Daptomycin,"[('Daptomycin', 5.0, 'uM')]",13,Daptomycin,5.0,uM,false,daptomycin,mixed,,
+smp_2731,plate13,1690.3685398655139,2883.1906580211335,3355.262367915466,0.06544373,Daptomycin,"[('Daptomycin', 0.05, 'uM')]",13,Daptomycin,0.05,uM,false,daptomycin,mixed,,
+smp_2719,plate13,1358.6071547217316,2154.1424300176595,2503.911545119158,0.050649036,Daptomycin,"[('Daptomycin', 0.5, 'uM')]",13,Daptomycin,0.5,uM,false,daptomycin,mixed,,
+smp_2727,plate13,1513.8343278463649,2498.2429698216733,2904.9914951989026,0.07475623,Edoxaban (tosylate monohydrate),"[('Edoxaban (tosylate monohydrate)', 0.5, 'uM')]",13,Edoxaban (tosylate monohydrate),0.5,uM,false,edoxaban (tosylate monohydrate),mixed,,
+smp_2739,plate13,1587.2979167149444,2634.625649819634,3057.2244185417776,0.07185651,Edoxaban (tosylate monohydrate),"[('Edoxaban (tosylate monohydrate)', 0.05, 'uM')]",13,Edoxaban (tosylate monohydrate),0.05,uM,false,edoxaban (tosylate monohydrate),mixed,,
+smp_2715,plate13,1479.3906783928635,2403.735009532031,2795.945082910687,0.0768357,Edoxaban (tosylate monohydrate),"[('Edoxaban (tosylate monohydrate)', 5.0, 'uM')]",13,Edoxaban (tosylate monohydrate),5.0,uM,false,edoxaban (tosylate monohydrate),mixed,,
+smp_2710,plate13,1315.3617251394476,2110.0261760381095,2454.129458372322,0.08295997,Fostamatinib (disodium hexahydrate),"[('Fostamatinib (disodium hexahydrate)', 5.0, 'uM')]",13,Fostamatinib (disodium hexahydrate),5.0,uM,false,fostamatinib (disodium hexahydrate),mixed,,
+smp_2734,plate13,1397.6641067135627,2175.7438144860294,2535.475243912706,0.043881305,Fostamatinib (disodium hexahydrate),"[('Fostamatinib (disodium hexahydrate)', 0.05, 'uM')]",13,Fostamatinib (disodium hexahydrate),0.05,uM,false,fostamatinib (disodium hexahydrate),mixed,,
+smp_2722,plate13,1364.2329899345616,2131.9648892276155,2478.382276418491,0.051773254,Fostamatinib (disodium hexahydrate),"[('Fostamatinib (disodium hexahydrate)', 0.5, 'uM')]",13,Fostamatinib (disodium hexahydrate),0.5,uM,false,fostamatinib (disodium hexahydrate),mixed,,
+smp_2708,plate13,1579.8850849406485,2661.0582804450505,3096.4217835845293,0.068992734,Glasdegib,"[('Glasdegib', 5.0, 'uM')]",13,Glasdegib,5.0,uM,false,glasdegib,mixed,,
+smp_2732,plate13,1680.394310694507,2854.130914975673,3321.5649688422777,0.06378076,Glasdegib,"[('Glasdegib', 0.05, 'uM')]",13,Glasdegib,0.05,uM,false,glasdegib,mixed,,
+smp_2720,plate13,1553.8222047109532,2587.775199612642,3013.690683477485,0.098558776,Glasdegib,"[('Glasdegib', 0.5, 'uM')]",13,Glasdegib,0.5,uM,false,glasdegib,mixed,,
+smp_2723,plate13,1090.1995224197399,1645.994817369771,1916.1361988148935,0.08946541,Ivabradine (hydrochloride),"[('Ivabradine (hydrochloride)', 0.5, 'uM')]",13,Ivabradine (hydrochloride),0.5,uM,false,ivabradine (hydrochloride),mixed,,
+smp_2735,plate13,1495.0115825688074,2466.8793195718654,2871.032759938838,0.07130053,Ivabradine (hydrochloride),"[('Ivabradine (hydrochloride)', 0.05, 'uM')]",13,Ivabradine (hydrochloride),0.05,uM,false,ivabradine (hydrochloride),mixed,,
+smp_2711,plate13,1178.2029630578415,1836.026641903359,2134.986038617951,0.10179906,Ivabradine (hydrochloride),"[('Ivabradine (hydrochloride)', 5.0, 'uM')]",13,Ivabradine (hydrochloride),5.0,uM,false,ivabradine (hydrochloride),mixed,,
+smp_2714,plate13,1462.9183657640363,2366.2423528499266,2752.5560920275734,0.06843793,Larotrectinib sulfate,"[('Larotrectinib sulfate', 5.0, 'uM')]",13,Larotrectinib sulfate,5.0,uM,false,larotrectinib sulfate,mixed,,
+smp_2726,plate13,1687.7267728420923,2927.3268436941653,3410.124283777956,0.07565378,Larotrectinib sulfate,"[('Larotrectinib sulfate', 0.5, 'uM')]",13,Larotrectinib sulfate,0.5,uM,false,larotrectinib sulfate,mixed,,
+smp_2738,plate13,1527.390633756177,2517.3966580060114,2932.293774517296,0.07726426,Larotrectinib sulfate,"[('Larotrectinib sulfate', 0.05, 'uM')]",13,Larotrectinib sulfate,0.05,uM,false,larotrectinib sulfate,mixed,,
+smp_2664,plate13,1143.1181256176314,1714.187553145037,1991.6282720106635,0.04800265,Nimesulide,"[('Nimesulide', 5.0, 'uM')]",13,Nimesulide,5.0,uM,false,nimesulide,mixed,,
+smp_2665,plate13,1493.2490696363125,2417.5329433323936,2816.2539469974627,0.06506006,Nimesulide,"[('Nimesulide', 0.5, 'uM')]",13,Nimesulide,0.5,uM,false,nimesulide,mixed,,
+smp_2666,plate13,1344.5916929326888,2162.3107515584506,2511.1546123135113,0.07269808,Nimesulide,"[('Nimesulide', 0.05, 'uM')]",13,Nimesulide,0.05,uM,false,nimesulide,mixed,,
+smp_2737,plate13,1549.5964593660183,2448.10317823968,2850.2407964343734,0.044668205,Ornidazole,"[('Ornidazole', 0.05, 'uM')]",13,Ornidazole,0.05,uM,false,ornidazole,mixed,,
+smp_2713,plate13,1458.3479836798424,2311.271262209913,2690.7464334507467,0.0600203,Ornidazole,"[('Ornidazole', 5.0, 'uM')]",13,Ornidazole,5.0,uM,false,ornidazole,mixed,,
+smp_2725,plate13,1453.5141628296635,2318.6499729540747,2693.770795677929,0.060697738,Ornidazole,"[('Ornidazole', 0.5, 'uM')]",13,Ornidazole,0.5,uM,false,ornidazole,mixed,,
+smp_2736,plate13,1607.0576750915586,2660.9182348419768,3096.517864086449,0.058048572,Plicamycin,"[('Plicamycin', 0.05, 'uM')]",13,Plicamycin,0.05,uM,false,plicamycin,mixed,,
+smp_2712,plate13,1437.2222821231633,2271.667601121346,2643.66512122239,0.060598835,Plicamycin,"[('Plicamycin', 5.0, 'uM')]",13,Plicamycin,5.0,uM,false,plicamycin,mixed,,
+smp_2724,plate13,1370.4797539398166,2128.7722780649183,2476.818815993912,0.058984086,Plicamycin,"[('Plicamycin', 0.5, 'uM')]",13,Plicamycin,0.5,uM,false,plicamycin,mixed,,
+smp_2742,plate13,1301.0210706093794,2027.9130067819162,2359.590979952139,0.069652736,Ribociclib,"[('Ribociclib', 0.05, 'uM')]",13,Ribociclib,0.05,uM,false,ribociclib,mixed,,
+smp_2730,plate13,1449.1033718555648,2335.786839784647,2719.034786039172,0.060371146,Ribociclib,"[('Ribociclib', 0.5, 'uM')]",13,Ribociclib,0.5,uM,false,ribociclib,mixed,,
+smp_2718,plate13,1454.4283104931678,2351.885456487239,2735.2590104702113,0.06150957,Ribociclib,"[('Ribociclib', 5.0, 'uM')]",13,Ribociclib,5.0,uM,false,ribociclib,mixed,,
+smp_2716,plate13,1490.9295146992442,2418.6006473237867,2812.6974193486426,0.059468806,Rimonabant (Hydrochloride),"[('Rimonabant (Hydrochloride)', 5.0, 'uM')]",13,Rimonabant (Hydrochloride),5.0,uM,false,rimonabant (hydrochloride),mixed,,
+smp_2740,plate13,1327.3681051901444,2112.6854348241304,2459.6755732480874,0.079505764,Rimonabant (Hydrochloride),"[('Rimonabant (Hydrochloride)', 0.05, 'uM')]",13,Rimonabant (Hydrochloride),0.05,uM,false,rimonabant (hydrochloride),mixed,,
+smp_2728,plate13,1787.6474246560483,3153.059823188039,3671.4512682371233,0.063668,Rimonabant (Hydrochloride),"[('Rimonabant (Hydrochloride)', 0.5, 'uM')]",13,Rimonabant (Hydrochloride),0.5,uM,false,rimonabant (hydrochloride),mixed,,
+smp_2647,plate13,1575.562580398778,2512.0744794179127,2922.316369191188,0.02760616,Abemaciclib,"[('Abemaciclib', 0.05, 'uM')]",13,Abemaciclib,0.05,uM,false,abemaciclib,mixed,1,smp_1499
+smp_2668,plate13,1475.0049966343913,2407.770853829027,2798.132074250505,0.056126285,Adagrasib,"[('Adagrasib', 0.05, 'uM')]",13,Adagrasib,0.05,uM,false,adagrasib,mixed,1,smp_1588
+smp_2667,plate13,1812.5757011814428,3197.7119032753817,3719.8141749111514,0.06926198,Adagrasib,"[('Adagrasib', 0.05, 'uM')]",13,Adagrasib,0.05,uM,false,adagrasib,mixed,1,smp_1588
+smp_2704,plate13,1274.1672696318365,1991.8285413469832,2312.4626628285973,0.053095125,Afatinib,"[('Afatinib', 0.05, 'uM')]",13,Afatinib,0.05,uM,false,afatinib,mixed,1,smp_1530
+smp_2655,plate13,1763.4096460273422,3045.921234168462,3545.3026244101156,0.077748,DTP3,"[('DTP3', 0.05, 'uM')]",13,DTP3,0.05,uM,false,dtp3,mixed,1,smp_1570
+smp_2652,plate13,1480.3575691928436,2417.683233107982,2814.4266313076605,0.08276616,Hydroxyfasudil,"[('Hydroxyfasudil', 0.05, 'uM')]",13,Hydroxyfasudil,0.05,uM,false,hydroxyfasudil,mixed,1,smp_1556
+smp_2656,plate13,1519.258438676059,2473.568107690823,2876.752417253691,0.053562786,Methylprednisolone succinate,"[('Methylprednisolone succinate', 0.05, 'uM')]",13,Methylprednisolone succinate,0.05,uM,false,methylprednisolone succinate,mixed,1,smp_1576
+smp_2650,plate13,1434.6934641837267,2333.6545710493506,2714.564034911314,0.07761108,PF-06260933,"[('PF-06260933', 0.05, 'uM')]",13,PF-06260933,0.05,uM,false,pf-06260933,mixed,1,smp_1544
+smp_2653,plate13,1512.4143290961827,2437.9156041346287,2837.5131007767027,0.043500878,Pralsetinib,"[('Pralsetinib', 0.05, 'uM')]",13,Pralsetinib,0.05,uM,false,pralsetinib,mixed,1,smp_1560
+smp_2649,plate13,1394.671080858913,2223.4935441185316,2586.3745112977927,0.084257476,Ralimetinib dimesylate,"[('Ralimetinib dimesylate', 0.05, 'uM')]",13,Ralimetinib dimesylate,0.05,uM,false,ralimetinib dimesylate,mixed,1,smp_1532
+smp_2733,plate13,1583.2631629896246,2623.2361725907085,3049.453283817201,0.061242763,Regorafenib,"[('Regorafenib', 0.05, 'uM')]",13,Regorafenib,0.05,uM,false,regorafenib,mixed,1,smp_1513
+smp_2651,plate13,1716.074439136482,2921.5357596385593,3401.4990022374072,0.05230451,Sonidegib,"[('Sonidegib', 0.05, 'uM')]",13,Sonidegib,0.05,uM,false,sonidegib,mixed,1,smp_1548
+smp_2648,plate13,1600.2900975382179,2625.4071217003548,3056.761666069937,0.06698447,c-Kit-IN-1,"[('c-Kit-IN-1', 0.05, 'uM')]",13,c-Kit-IN-1,0.05,uM,false,c-kit-in-1,mixed,1,smp_1509
+smp_2654,plate13,1854.5944366709575,3311.050909497957,3857.2499804108134,0.081881486,olaparib,"[('olaparib', 0.05, 'uM')]",13,olaparib,0.05,uM,false,olaparib,mixed,1,smp_1568
+smp_2667,plate13,1812.5757011814428,3197.7119032753817,3719.8141749111514,0.06926198,Adagrasib,"[('Adagrasib', 0.05, 'uM')]",13,Adagrasib,0.05,uM,false,adagrasib,mixed,2,smp_1684
+smp_2668,plate13,1475.0049966343913,2407.770853829027,2798.132074250505,0.056126285,Adagrasib,"[('Adagrasib', 0.05, 'uM')]",13,Adagrasib,0.05,uM,false,adagrasib,mixed,2,smp_1684
+smp_2692,plate13,1363.7008331169905,2218.274338580633,2578.3670552972553,0.086220905,Afatinib,"[('Afatinib', 0.5, 'uM')]",13,Afatinib,0.5,uM,false,afatinib,mixed,2,smp_1626
+smp_2721,plate13,1401.0192282451765,2167.8415146344664,2522.5090234938966,0.04424157,Regorafenib,"[('Regorafenib', 0.5, 'uM')]",13,Regorafenib,0.5,uM,false,regorafenib,mixed,2,smp_1609
+smp_2667,plate13,1812.5757011814428,3197.7119032753817,3719.8141749111514,0.06926198,Adagrasib,"[('Adagrasib', 0.05, 'uM')]",13,Adagrasib,0.05,uM,false,adagrasib,mixed,3,smp_1780
+smp_2668,plate13,1475.0049966343913,2407.770853829027,2798.132074250505,0.056126285,Adagrasib,"[('Adagrasib', 0.05, 'uM')]",13,Adagrasib,0.05,uM,false,adagrasib,mixed,3,smp_1780
+smp_2680,plate13,1459.131936026738,2395.400056488532,2790.282124910266,0.07594197,Afatinib,"[('Afatinib', 5.0, 'uM')]",13,Afatinib,5.0,uM,false,afatinib,mixed,3,smp_1722
+smp_2709,plate13,1426.6632233830262,2290.598270532535,2664.739953828697,0.06684015,Regorafenib,"[('Regorafenib', 5.0, 'uM')]",13,Regorafenib,5.0,uM,false,regorafenib,mixed,3,smp_1705
+smp_2668,plate13,1475.0049966343913,2407.770853829027,2798.132074250505,0.056126285,Adagrasib,"[('Adagrasib', 0.05, 'uM')]",13,Adagrasib,0.05,uM,false,adagrasib,mixed,4,smp_1876
+smp_2667,plate13,1812.5757011814428,3197.7119032753817,3719.8141749111514,0.06926198,Adagrasib,"[('Adagrasib', 0.05, 'uM')]",13,Adagrasib,0.05,uM,false,adagrasib,mixed,4,smp_1876
+smp_2668,plate13,1475.0049966343913,2407.770853829027,2798.132074250505,0.056126285,Adagrasib,"[('Adagrasib', 0.05, 'uM')]",13,Adagrasib,0.05,uM,false,adagrasib,mixed,5,smp_1972
+smp_2667,plate13,1812.5757011814428,3197.7119032753817,3719.8141749111514,0.06926198,Adagrasib,"[('Adagrasib', 0.05, 'uM')]",13,Adagrasib,0.05,uM,false,adagrasib,mixed,5,smp_1972
+smp_2658,plate13,1792.4388613138685,3095.174802919708,3602.588807785888,0.06613094,Berbamine,"[('Berbamine', 0.5, 'uM')]",13,Berbamine,0.5,uM,false,berbamine,mixed,5,smp_1882
+smp_2657,plate13,1896.0121780958527,3427.656326626386,3987.643315539391,0.07484451,Chlorhexidine (diacetate),"[('Chlorhexidine (diacetate)', 0.5, 'uM')]",13,Chlorhexidine (diacetate),0.5,uM,false,chlorhexidine (diacetate),mixed,5,smp_1880
+smp_2660,plate13,1264.2703875384034,1944.8840079771467,2260.8833611814803,0.056587547,Pentamidine (isethionate),"[('Pentamidine (isethionate)', 0.5, 'uM')]",13,Pentamidine (isethionate),0.5,uM,false,pentamidine (isethionate),mixed,5,smp_1927
+smp_2661,plate13,1236.9676632474357,1867.720873988825,2169.7584438328745,0.041183308,Sulfisoxazole,"[('Sulfisoxazole', 0.5, 'uM')]",13,Sulfisoxazole,0.5,uM,false,sulfisoxazole,mixed,5,smp_1929
+smp_2659,plate13,1105.7868614005404,1640.4478879092826,1901.5723869742037,0.054270666,Terfenadine,"[('Terfenadine', 0.5, 'uM')]",13,Terfenadine,0.5,uM,false,terfenadine,mixed,5,smp_1910
+smp_2668,plate13,1475.0049966343913,2407.770853829027,2798.132074250505,0.056126285,Adagrasib,"[('Adagrasib', 0.05, 'uM')]",13,Adagrasib,0.05,uM,false,adagrasib,mixed,6,smp_2068
+smp_2667,plate13,1812.5757011814428,3197.7119032753817,3719.8141749111514,0.06926198,Adagrasib,"[('Adagrasib', 0.05, 'uM')]",13,Adagrasib,0.05,uM,false,adagrasib,mixed,6,smp_2068
+smp_2667,plate13,1812.5757011814428,3197.7119032753817,3719.8141749111514,0.06926198,Adagrasib,"[('Adagrasib', 0.05, 'uM')]",13,Adagrasib,0.05,uM,false,adagrasib,mixed,7,smp_2164
+smp_2668,plate13,1475.0049966343913,2407.770853829027,2798.132074250505,0.056126285,Adagrasib,"[('Adagrasib', 0.05, 'uM')]",13,Adagrasib,0.05,uM,false,adagrasib,mixed,7,smp_2164
+smp_2667,plate13,1812.5757011814428,3197.7119032753817,3719.8141749111514,0.06926198,Adagrasib,"[('Adagrasib', 0.05, 'uM')]",13,Adagrasib,0.05,uM,false,adagrasib,mixed,7,smp_2152
+smp_2668,plate13,1475.0049966343913,2407.770853829027,2798.132074250505,0.056126285,Adagrasib,"[('Adagrasib', 0.05, 'uM')]",13,Adagrasib,0.05,uM,false,adagrasib,mixed,7,smp_2152
+smp_2704,plate13,1274.1672696318365,1991.8285413469832,2312.4626628285973,0.053095125,Afatinib,"[('Afatinib', 0.05, 'uM')]",13,Afatinib,0.05,uM,false,afatinib,mixed,7,smp_2092
+smp_2699,plate13,1186.216782421762,1799.0374240357187,2093.304322212576,0.06267272,Almonertinib (mesylate),"[('Almonertinib (mesylate)', 0.05, 'uM')]",13,Almonertinib (mesylate),0.05,uM,false,almonertinib (mesylate),mixed,7,smp_2081
+smp_2701,plate13,1365.4097007223943,2161.6271599057977,2512.0488652501035,0.0595906,Belumosudil,"[('Belumosudil', 0.05, 'uM')]",13,Belumosudil,0.05,uM,false,belumosudil,mixed,7,smp_2089
+smp_2695,plate13,1443.870803707241,2287.2746736708054,2661.916958505784,0.045151558,Berbamine (dihydrochloride),"[('Berbamine (dihydrochloride)', 0.05, 'uM')]",13,Berbamine (dihydrochloride),0.05,uM,false,berbamine (dihydrochloride),mixed,7,smp_2077
+smp_2703,plate13,1512.0895300676325,2488.5015204208244,2899.6335086768845,0.0793814,Cytarabine,"[('Cytarabine', 0.05, 'uM')]",13,Cytarabine,0.05,uM,false,cytarabine,mixed,7,smp_2091
+smp_2696,plate13,1442.8286787224733,2375.1659860969326,2765.938894560303,0.08556171,Daidzin,"[('Daidzin', 0.05, 'uM')]",13,Daidzin,0.05,uM,false,daidzin,mixed,7,smp_2078
+smp_2702,plate13,1526.549028496075,2498.6563472276594,2907.2062926256363,0.049484286,Flumatinib (mesylate),"[('Flumatinib (mesylate)', 0.05, 'uM')]",13,Flumatinib (mesylate),0.05,uM,false,flumatinib (mesylate),mixed,7,smp_2090
+smp_2697,plate13,1362.996703543935,2219.4434662675703,2583.592031771185,0.105865546,Fumaric acid,"[('Fumaric acid', 0.05, 'uM')]",13,Fumaric acid,0.05,uM,false,fumaric acid,mixed,7,smp_2079
+smp_2700,plate13,995.9254750694878,1405.1096602189573,1637.1363321799308,0.06876512,Irinotecan (hydrochloride),"[('Irinotecan (hydrochloride)', 0.05, 'uM')]",13,Irinotecan (hydrochloride),0.05,uM,false,irinotecan (hydrochloride),mixed,7,smp_2082
+smp_2706,plate13,1356.7957652516627,2129.3239284834553,2474.1528142704656,0.058137804,Naproxen,"[('Naproxen', 0.05, 'uM')]",13,Naproxen,0.05,uM,false,naproxen,mixed,7,smp_2094
+smp_2698,plate13,1097.8608253530533,1604.3784430105673,1867.8756584404252,0.06367005,Pravastatin (sodium),"[('Pravastatin (sodium)', 0.05, 'uM')]",13,Pravastatin (sodium),0.05,uM,false,pravastatin (sodium),mixed,7,smp_2080
+smp_2705,plate13,1398.1525777719276,2251.311359747269,2614.673107805713,0.07144124,Topotecan (hydrochloride),"[('Topotecan (hydrochloride)', 0.05, 'uM')]",13,Topotecan (hydrochloride),0.05,uM,false,topotecan (hydrochloride),mixed,7,smp_2093
+smp_2668,plate13,1475.0049966343913,2407.770853829027,2798.132074250505,0.056126285,Adagrasib,"[('Adagrasib', 0.05, 'uM')]",13,Adagrasib,0.05,uM,false,adagrasib,mixed,8,smp_2260
+smp_2667,plate13,1812.5757011814428,3197.7119032753817,3719.8141749111514,0.06926198,Adagrasib,"[('Adagrasib', 0.05, 'uM')]",13,Adagrasib,0.05,uM,false,adagrasib,mixed,8,smp_2260
+smp_2692,plate13,1363.7008331169905,2218.274338580633,2578.3670552972553,0.086220905,Afatinib,"[('Afatinib', 0.5, 'uM')]",13,Afatinib,0.5,uM,false,afatinib,mixed,8,smp_2188
+smp_2687,plate13,1485.113698105477,2415.0215282664267,2807.3803742729647,0.061254933,Almonertinib (mesylate),"[('Almonertinib (mesylate)', 0.5, 'uM')]",13,Almonertinib (mesylate),0.5,uM,false,almonertinib (mesylate),mixed,8,smp_2177
+smp_2689,plate13,1425.2786839145108,2281.3865820343885,2655.203792383095,0.056702297,Belumosudil,"[('Belumosudil', 0.5, 'uM')]",13,Belumosudil,0.5,uM,false,belumosudil,mixed,8,smp_2185
+smp_2683,plate13,1275.7891737576488,1950.1648722516682,2264.9552853175173,0.053457227,Berbamine (dihydrochloride),"[('Berbamine (dihydrochloride)', 0.5, 'uM')]",13,Berbamine (dihydrochloride),0.5,uM,false,berbamine (dihydrochloride),mixed,8,smp_2173
+smp_2691,plate13,1318.4729846865068,2108.7168647690023,2449.779453815421,0.08188199,Cytarabine,"[('Cytarabine', 0.5, 'uM')]",13,Cytarabine,0.5,uM,false,cytarabine,mixed,8,smp_2187
+smp_2684,plate13,1178.593348718859,1789.453553464702,2076.829066808687,0.057425797,Daidzin,"[('Daidzin', 0.5, 'uM')]",13,Daidzin,0.5,uM,false,daidzin,mixed,8,smp_2174
+smp_2690,plate13,1465.439795126232,2420.4874105575805,2818.588446739571,0.07653482,Flumatinib (mesylate),"[('Flumatinib (mesylate)', 0.5, 'uM')]",13,Flumatinib (mesylate),0.5,uM,false,flumatinib (mesylate),mixed,8,smp_2186
+smp_2685,plate13,1420.0594452976782,2221.347507051726,2587.776673592917,0.05301012,Fumaric acid,"[('Fumaric acid', 0.5, 'uM')]",13,Fumaric acid,0.5,uM,false,fumaric acid,mixed,8,smp_2175
+smp_2688,plate13,1133.0554020539623,1692.3014697315202,1967.9983854591455,0.086562045,Irinotecan (hydrochloride),"[('Irinotecan (hydrochloride)', 0.5, 'uM')]",13,Irinotecan (hydrochloride),0.5,uM,false,irinotecan (hydrochloride),mixed,8,smp_2178
+smp_2694,plate13,1360.1731575989118,2137.2174794926727,2485.463868818273,0.05887913,Naproxen,"[('Naproxen', 0.5, 'uM')]",13,Naproxen,0.5,uM,false,naproxen,mixed,8,smp_2190
+smp_2686,plate13,1130.15949599375,1676.601337233598,1949.4865277348788,0.06529403,Pravastatin (sodium),"[('Pravastatin (sodium)', 0.5, 'uM')]",13,Pravastatin (sodium),0.5,uM,false,pravastatin (sodium),mixed,8,smp_2176
+smp_2693,plate13,1507.9544141334084,2515.5038393032155,2925.9733507188575,0.077768825,Topotecan (hydrochloride),"[('Topotecan (hydrochloride)', 0.5, 'uM')]",13,Topotecan (hydrochloride),0.5,uM,false,topotecan (hydrochloride),mixed,8,smp_2189
+smp_2668,plate13,1475.0049966343913,2407.770853829027,2798.132074250505,0.056126285,Adagrasib,"[('Adagrasib', 0.05, 'uM')]",13,Adagrasib,0.05,uM,false,adagrasib,mixed,9,smp_2356
+smp_2667,plate13,1812.5757011814428,3197.7119032753817,3719.8141749111514,0.06926198,Adagrasib,"[('Adagrasib', 0.05, 'uM')]",13,Adagrasib,0.05,uM,false,adagrasib,mixed,9,smp_2356
+smp_2680,plate13,1459.131936026738,2395.400056488532,2790.282124910266,0.07594197,Afatinib,"[('Afatinib', 5.0, 'uM')]",13,Afatinib,5.0,uM,false,afatinib,mixed,9,smp_2284
+smp_2675,plate13,976.9316099106234,1396.289172983369,1609.2317287023418,0.053228687,Almonertinib (mesylate),"[('Almonertinib (mesylate)', 5.0, 'uM')]",13,Almonertinib (mesylate),5.0,uM,false,almonertinib (mesylate),mixed,9,smp_2273
+smp_2677,plate13,1142.5105133932693,1704.6628145249128,1984.3799774778934,0.056772888,Belumosudil,"[('Belumosudil', 5.0, 'uM')]",13,Belumosudil,5.0,uM,false,belumosudil,mixed,9,smp_2281
+smp_2671,plate13,1230.4271730618636,1888.3092404072045,2196.5402114330464,0.041734263,Berbamine (dihydrochloride),"[('Berbamine (dihydrochloride)', 5.0, 'uM')]",13,Berbamine (dihydrochloride),5.0,uM,false,berbamine (dihydrochloride),mixed,9,smp_2269
+smp_2679,plate13,1569.3691649073423,2616.6200152474785,3040.8772675736964,0.06742506,Cytarabine,"[('Cytarabine', 5.0, 'uM')]",13,Cytarabine,5.0,uM,false,cytarabine,mixed,9,smp_2283
+smp_2672,plate13,1048.7856378042686,1540.3433863944606,1787.8532728959954,0.056285884,Daidzin,"[('Daidzin', 5.0, 'uM')]",13,Daidzin,5.0,uM,false,daidzin,mixed,9,smp_2270
+smp_2678,plate13,1207.3494388174104,1863.6130204315257,2165.6760321529005,0.074756205,Flumatinib (mesylate),"[('Flumatinib (mesylate)', 5.0, 'uM')]",13,Flumatinib (mesylate),5.0,uM,false,flumatinib (mesylate),mixed,9,smp_2282
+smp_2673,plate13,1195.046313340492,1779.0697064989517,2068.632037122258,0.044726033,Fumaric acid,"[('Fumaric acid', 5.0, 'uM')]",13,Fumaric acid,5.0,uM,false,fumaric acid,mixed,9,smp_2271
+smp_2676,plate13,1010.3050334569322,1461.9375186463794,1698.5490985807442,0.076532915,Irinotecan (hydrochloride),"[('Irinotecan (hydrochloride)', 5.0, 'uM')]",13,Irinotecan (hydrochloride),5.0,uM,false,irinotecan (hydrochloride),mixed,9,smp_2274
+smp_2682,plate13,1516.6880576928704,2514.8536906468507,2923.943521254498,0.07889829,Naproxen,"[('Naproxen', 5.0, 'uM')]",13,Naproxen,5.0,uM,false,naproxen,mixed,9,smp_2286
+smp_2674,plate13,1082.7440979195876,1638.8999962105422,1904.881958391754,0.07438188,Pravastatin (sodium),"[('Pravastatin (sodium)', 5.0, 'uM')]",13,Pravastatin (sodium),5.0,uM,false,pravastatin (sodium),mixed,9,smp_2272
+smp_2681,plate13,1380.2391501628142,2252.8311429028986,2620.527507606897,0.09596289,Topotecan (hydrochloride),"[('Topotecan (hydrochloride)', 5.0, 'uM')]",13,Topotecan (hydrochloride),5.0,uM,false,topotecan (hydrochloride),mixed,9,smp_2285
+smp_2668,plate13,1475.0049966343913,2407.770853829027,2798.132074250505,0.056126285,Adagrasib,"[('Adagrasib', 0.05, 'uM')]",13,Adagrasib,0.05,uM,false,adagrasib,mixed,10,smp_2452
+smp_2667,plate13,1812.5757011814428,3197.7119032753817,3719.8141749111514,0.06926198,Adagrasib,"[('Adagrasib', 0.05, 'uM')]",13,Adagrasib,0.05,uM,false,adagrasib,mixed,10,smp_2452
+smp_2662,plate13,1218.7268166447045,1902.79017892581,2215.937272770572,0.076505244,Captopril,"[('Captopril', 0.05, 'uM')]",13,Captopril,0.05,uM,false,captopril,mixed,10,smp_2400
+smp_2663,plate13,1246.2313857995696,1958.319282402497,2277.1110033637383,0.08047597,Malotilate,"[('Malotilate', 0.05, 'uM')]",13,Malotilate,0.05,uM,false,malotilate,mixed,10,smp_2412
+smp_2668,plate13,1475.0049966343913,2407.770853829027,2798.132074250505,0.056126285,Adagrasib,"[('Adagrasib', 0.05, 'uM')]",13,Adagrasib,0.05,uM,false,adagrasib,mixed,11,smp_2548
+smp_2667,plate13,1812.5757011814428,3197.7119032753817,3719.8141749111514,0.06926198,Adagrasib,"[('Adagrasib', 0.05, 'uM')]",13,Adagrasib,0.05,uM,false,adagrasib,mixed,11,smp_2548
+smp_2668,plate13,1475.0049966343913,2407.770853829027,2798.132074250505,0.056126285,Adagrasib,"[('Adagrasib', 0.05, 'uM')]",13,Adagrasib,0.05,uM,false,adagrasib,mixed,12,smp_2644
+smp_2667,plate13,1812.5757011814428,3197.7119032753817,3719.8141749111514,0.06926198,Adagrasib,"[('Adagrasib', 0.05, 'uM')]",13,Adagrasib,0.05,uM,false,adagrasib,mixed,12,smp_2644
+smp_2668,plate13,1475.0049966343913,2407.770853829027,2798.132074250505,0.056126285,Adagrasib,"[('Adagrasib', 0.05, 'uM')]",13,Adagrasib,0.05,uM,false,adagrasib,mixed,14,smp_2836
+smp_2667,plate13,1812.5757011814428,3197.7119032753817,3719.8141749111514,0.06926198,Adagrasib,"[('Adagrasib', 0.05, 'uM')]",13,Adagrasib,0.05,uM,false,adagrasib,mixed,14,smp_2836

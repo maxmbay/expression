@@ -1,0 +1,49 @@
+{
+  "repo_id": "tahoebio/Tahoe-100M",
+  "revision": "349e2a55f5538a3e73b32a06c6bdd8e9e87011e8",
+  "source_url": "https://huggingface.co/datasets/tahoebio/Tahoe-100M/tree/349e2a55f5538a3e73b32a06c6bdd8e9e87011e8",
+  "files": [
+    {
+      "path": "LICENSE.md",
+      "bytes": 6884,
+      "sha256": "82fe759ab83e7619dfe956bb8b295b0ce640ed3706b68b871c15645a0f695a6b",
+      "remote_sha256": null,
+      "checksum_matches_remote": null
+    },
+    {
+      "path": "metadata/cell_line_metadata.parquet",
+      "bytes": 19040,
+      "sha256": "67641f5bdd3fb077978ff1fec4d0d617490674bcd42850515ae3997194c29d4d",
+      "remote_sha256": "67641f5bdd3fb077978ff1fec4d0d617490674bcd42850515ae3997194c29d4d",
+      "checksum_matches_remote": true
+    },
+    {
+      "path": "metadata/drug_metadata.parquet",
+      "bytes": 40475,
+      "sha256": "7a04c7a6611e74c92253163b994ff0a47191928ee7511f1c2ca508cee0e79f28",
+      "remote_sha256": "7a04c7a6611e74c92253163b994ff0a47191928ee7511f1c2ca508cee0e79f28",
+      "checksum_matches_remote": true
+    },
+    {
+      "path": "metadata/gene_metadata.parquet",
+      "bytes": 1326799,
+      "sha256": "d6104d1ca570d94832be0d27ffe8b7e4e54cfd366c9080239219f9c406eb751c",
+      "remote_sha256": "d6104d1ca570d94832be0d27ffe8b7e4e54cfd366c9080239219f9c406eb751c",
+      "checksum_matches_remote": true
+    },
+    {
+      "path": "metadata/obs_metadata.parquet",
+      "bytes": 2293981573,
+      "sha256": "e51b24f3666f5f433c59ff01dd6fa33934627091455e89d929f2c1ddc87401fe",
+      "remote_sha256": "e51b24f3666f5f433c59ff01dd6fa33934627091455e89d929f2c1ddc87401fe",
+      "checksum_matches_remote": true
+    },
+    {
+      "path": "metadata/sample_metadata.parquet",
+      "bytes": 65636,
+      "sha256": "33167f0ce28cff8357c503cda67d1c7fea200bff6918ee1de3c4f3549175b9d3",
+      "remote_sha256": "33167f0ce28cff8357c503cda67d1c7fea200bff6918ee1de3c4f3549175b9d3",
+      "checksum_matches_remote": true
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "vocabulary_genes": 62710,
+  "token_min": 3,
+  "token_max": 62712,
+  "row_groups": [
+    {
+      "shard": 0,
+      "row_group": 0,
+      "cells": 1000,
+      "matched_obs": 1000,
+      "total_equals_tscp": 1000,
+      "nnz_equals_gene_count": 1000,
+      "unknown_token_entries": 0,
+      "unknown_token_counts": 0.0
+    },
+    {
+      "shard": 0,
+      "row_group": 14,
+      "cells": 1000,
+      "matched_obs": 1000,
+      "total_equals_tscp": 1000,
+      "nnz_equals_gene_count": 1000,
+      "unknown_token_entries": 0,
+      "unknown_token_counts": 0.0
+    },
+    {
+      "shard": 1694,
+      "row_group": 0,
+      "cells": 1000,
+      "matched_obs": 1000,
+      "total_equals_tscp": 1000,
+      "nnz_equals_gene_count": 1000,
+      "unknown_token_entries": 0,
+      "unknown_token_counts": 0.0
+    },
+    {
+      "shard": 1694,
+      "row_group": 14,
+      "cells": 1000,
+      "matched_obs": 1000,
+      "total_equals_tscp": 1000,
+      "nnz_equals_gene_count": 1000,
+      "unknown_token_entries": 0,
+      "unknown_token_counts": 0.0
+    },
+    {
+      "shard": 3387,
+      "row_group": 0,
+      "cells": 1000,
+      "matched_obs": 1000,
+      "total_equals_tscp": 1000,
+      "nnz_equals_gene_count": 1000,
+      "unknown_token_entries": 0,
+      "unknown_token_counts": 0.0
+    },
+    {
+      "shard": 3387,
+      "row_group": 14,
+      "cells": 1000,
+      "matched_obs": 1000,
+      "total_equals_tscp": 1000,
+      "nnz_equals_gene_count": 1000,
+      "unknown_token_entries": 0,
+      "unknown_token_counts": 0.0
+    }
+  ]
+}

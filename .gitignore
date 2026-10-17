@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+.DS_Store
+
+# Downloaded and derived data never go in Git; manifests and reports do.
+/data/
+/runs/
+*.h5ad
+*.parquet
+!tests/fixtures/*.parquet

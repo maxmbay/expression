@@ -1,0 +1,163 @@
+compound_key,dose_uM,drug,n_wells,plates,samples
+adagrasib,0.05,Adagrasib,16,1;2;3;4;5;6;7;7;8;9;10;11;12;13;13;14,smp_1588;smp_1684;smp_1780;smp_1876;smp_1972;smp_2068;smp_2152;smp_2164;smp_2260;smp_2356;smp_2452;smp_2548;smp_2644;smp_2667;smp_2668;smp_2836
+afatinib,0.5,Afatinib,3,2;8;13,smp_1626;smp_2188;smp_2692
+afatinib,0.05,Afatinib,3,1;7;13,smp_1530;smp_2092;smp_2704
+afatinib,5.0,Afatinib,3,3;9;13,smp_1722;smp_2284;smp_2680
+(r)-verapamil (hydrochloride),5.0,(R)-Verapamil (hydrochloride),2,6;14,smp_1991;smp_2759
+18β-glycyrrhetinic acid,5.0,18β-Glycyrrhetinic acid,2,6;14,smp_2004;smp_2772
+8-hydroxyquinoline,5.0,8-Hydroxyquinoline,2,6;14,smp_1975;smp_2743
+abemaciclib,0.05,Abemaciclib,2,1;13,smp_1499;smp_2647
+acetohexamide,5.0,Acetohexamide,2,6;14,smp_1993;smp_2761
+adenine,5.0,Adenine,2,6;14,smp_2062;smp_2830
+adenosine,5.0,Adenosine,2,6;14,smp_2024;smp_2792
+aliskiren,5.0,Aliskiren,2,6;14,smp_2007;smp_2775
+allantoin,5.0,Allantoin,2,6;14,smp_2039;smp_2807
+almonertinib (hydrochloride),5.0,Almonertinib (hydrochloride),2,6;14,smp_2017;smp_2785
+almonertinib (mesylate),0.05,Almonertinib (mesylate),2,7;13,smp_2081;smp_2699
+almonertinib (mesylate),5.0,Almonertinib (mesylate),2,9;13,smp_2273;smp_2675
+almonertinib (mesylate),0.5,Almonertinib (mesylate),2,8;13,smp_2177;smp_2687
+amsacrine,5.0,Amsacrine,2,6;14,smp_2065;smp_2833
+anethole trithione,5.0,Anethole trithione,2,6;14,smp_2066;smp_2834
+artesunate,5.0,Artesunate,2,6;14,smp_2058;smp_2826
+azithromycin (hydrate),5.0,Azithromycin (hydrate),2,6;14,smp_2021;smp_2789
+baicalin,5.0,Baicalin,2,6;14,smp_2049;smp_2817
+balsalazide (sodium hydrate),5.0,Balsalazide (sodium hydrate),2,6;14,smp_2056;smp_2824
+belumosudil,5.0,Belumosudil,2,9;13,smp_2281;smp_2677
+belumosudil,0.5,Belumosudil,2,8;13,smp_2185;smp_2689
+belumosudil,0.05,Belumosudil,2,7;13,smp_2089;smp_2701
+berbamine,0.5,Berbamine,2,5;13,smp_1882;smp_2658
+berbamine,5.0,Berbamine,2,6;14,smp_1978;smp_2746
+berbamine (dihydrochloride),5.0,Berbamine (dihydrochloride),2,9;13,smp_2269;smp_2671
+berbamine (dihydrochloride),0.05,Berbamine (dihydrochloride),2,7;13,smp_2077;smp_2695
+berbamine (dihydrochloride),0.5,Berbamine (dihydrochloride),2,8;13,smp_2173;smp_2683
+berberine (chloride hydrate),5.0,Berberine (chloride hydrate),2,6;14,smp_2050;smp_2818
+bergenin,5.0,Bergenin,2,6;14,smp_2038;smp_2806
+bimatoprost,5.0,Bimatoprost,2,6;14,smp_2040;smp_2808
+binimetinib,0.05,Binimetinib,2,1;10,smp_1518;smp_2447
+binimetinib,5.0,Binimetinib,2,3;12,smp_1710;smp_2639
+binimetinib,0.5,Binimetinib,2,2;11,smp_1614;smp_2543
+busulfan,5.0,Busulfan,2,6;14,smp_2032;smp_2800
+captopril,0.05,Captopril,2,10;13,smp_2400;smp_2662
+cepharanthine,5.0,Cepharanthine,2,6;14,smp_2033;smp_2801
+chlorhexidine (diacetate),0.5,Chlorhexidine (diacetate),2,5;13,smp_1880;smp_2657
+chlorhexidine (diacetate),5.0,Chlorhexidine (diacetate),2,6;14,smp_1976;smp_2744
+ciclopirox,5.0,Ciclopirox,2,6;14,smp_2027;smp_2795
+clonidine (hydrochloride),5.0,Clonidine (hydrochloride),2,6;14,smp_2067;smp_2835
+clotrimazole,5.0,Clotrimazole,2,6;14,smp_1988;smp_2756
+cloxacillin (sodium),5.0,Cloxacillin (sodium),2,6;14,smp_2057;smp_2825
+cysteamine (hydrochloride),5.0,Cysteamine (hydrochloride),2,6;14,smp_1980;smp_2748
+cytarabine,0.5,Cytarabine,2,8;13,smp_2187;smp_2691
+cytarabine,0.05,Cytarabine,2,7;13,smp_2091;smp_2703
+cytarabine,5.0,Cytarabine,2,9;13,smp_2283;smp_2679
+dtp3,0.05,DTP3,2,1;13,smp_1570;smp_2655
+daidzin,5.0,Daidzin,2,9;13,smp_2270;smp_2672
+daidzin,0.05,Daidzin,2,7;13,smp_2078;smp_2696
+daidzin,0.5,Daidzin,2,8;13,smp_2174;smp_2684
+darinaparsin,5.0,Darinaparsin,2,6;14,smp_2018;smp_2786
+demeclocycline,5.0,Demeclocycline,2,6;14,smp_2029;smp_2797
+diammonium glycyrrhizinate,5.0,Diammonium Glycyrrhizinate,2,6;14,smp_1996;smp_2764
+docetaxel,5.0,Docetaxel,2,6;14,smp_2035;smp_2803
+elagolix sodium,5.0,Elagolix sodium,2,6;14,smp_2011;smp_2779
+everolimus,0.05,Everolimus,2,1;1,smp_1497;smp_1551
+everolimus,5.0,Everolimus,2,3;3,smp_1689;smp_1743
+everolimus,0.5,Everolimus,2,2;2,smp_1593;smp_1647
+flumatinib (mesylate),0.05,Flumatinib (mesylate),2,7;13,smp_2090;smp_2702
+flumatinib (mesylate),5.0,Flumatinib (mesylate),2,9;13,smp_2282;smp_2678
+flumatinib (mesylate),0.5,Flumatinib (mesylate),2,8;13,smp_2186;smp_2690
+fluvoxamine (maleate),5.0,Fluvoxamine (maleate),2,6;14,smp_2008;smp_2776
+folic acid,5.0,Folic acid,2,6;14,smp_2060;smp_2828
+fumaric acid,0.5,Fumaric acid,2,8;13,smp_2175;smp_2685
+fumaric acid,5.0,Fumaric acid,2,9;13,smp_2271;smp_2673
+fumaric acid,0.05,Fumaric acid,2,7;13,smp_2079;smp_2697
+furosemide,5.0,Furosemide,2,6;14,smp_1987;smp_2755
+fusidic acid,5.0,Fusidic acid,2,6;14,smp_2055;smp_2823
+gallic acid,5.0,Gallic acid,2,6;14,smp_2063;smp_2831
+gallic acid (hydrate),5.0,Gallic acid (hydrate),2,6;14,smp_1990;smp_2758
+gemcitabine,5.0,Gemcitabine,2,3;3,smp_1693;smp_1767
+gemcitabine,0.5,Gemcitabine,2,2;2,smp_1597;smp_1671
+gemcitabine,0.05,Gemcitabine,2,1;1,smp_1501;smp_1575
+gemfibrozil,5.0,Gemfibrozil,2,6;14,smp_2003;smp_2771
+goserelin (acetate),5.0,Goserelin (acetate),2,6;14,smp_2054;smp_2822
+hexylresorcinol,5.0,Hexylresorcinol,2,6;14,smp_2048;smp_2816
+homoharringtonine,5.0,Homoharringtonine,2,6;14,smp_2047;smp_2815
+hydroxyfasudil,0.05,Hydroxyfasudil,2,1;13,smp_1556;smp_2652
+idarubicin (hydrochloride),5.0,Idarubicin (hydrochloride),2,6;14,smp_2010;smp_2778
+irinotecan (hydrochloride),0.05,Irinotecan (hydrochloride),2,7;13,smp_2082;smp_2700
+irinotecan (hydrochloride),0.5,Irinotecan (hydrochloride),2,8;13,smp_2178;smp_2688
+irinotecan (hydrochloride),5.0,Irinotecan (hydrochloride),2,9;13,smp_2274;smp_2676
+isocorydine,5.0,Isocorydine,2,6;14,smp_1985;smp_2753
+l-thyroxine (sodium salt pentahydrate),5.0,L-Thyroxine (sodium salt pentahydrate),2,6;14,smp_1997;smp_2765
+larotrectinib,5.0,Larotrectinib,2,6;14,smp_2031;smp_2799
+lenalidomide (hemihydrate),5.0,Lenalidomide (hemihydrate),2,6;14,smp_2020;smp_2788
+lidocaine (hydrochloride),5.0,Lidocaine (hydrochloride),2,6;14,smp_2028;smp_2796
+lipoic acid,5.0,Lipoic acid,2,6;14,smp_2064;smp_2832
+lumateperone (tosylate),5.0,Lumateperone (tosylate),2,6;14,smp_2045;smp_2813
+malotilate,0.05,Malotilate,2,10;13,smp_2412;smp_2663
+medroxyprogesterone acetate,5.0,Medroxyprogesterone acetate,2,6;14,smp_2051;smp_2819
+megestrol,5.0,Megestrol,2,6;14,smp_1995;smp_2763
+methylprednisolone succinate,0.05,Methylprednisolone succinate,2,1;13,smp_1576;smp_2656
+mitoxantrone (dihydrochloride),5.0,Mitoxantrone (dihydrochloride),2,6;14,smp_2030;smp_2798
+naproxen,0.05,Naproxen,2,7;13,smp_2094;smp_2706
+naproxen,0.5,Naproxen,2,8;13,smp_2190;smp_2694
+naproxen,5.0,Naproxen,2,9;13,smp_2286;smp_2682
+neratinib (maleate),5.0,Neratinib (maleate),2,6;14,smp_2052;smp_2820
+norepinephrine (hydrochloride),5.0,Norepinephrine (hydrochloride),2,6;14,smp_2026;smp_2794
+olanzapine,5.0,Olanzapine,2,6;14,smp_2042;smp_2810
+pf-06260933,0.05,PF-06260933,2,1;13,smp_1544;smp_2650
+palmatine (chloride),5.0,Palmatine (chloride),2,6;14,smp_1984;smp_2752
+pasireotide (acetate),5.0,Pasireotide (acetate),2,6;14,smp_1982;smp_2750
+pentagastrin,5.0,Pentagastrin,2,6;14,smp_2044;smp_2812
+pentamidine (isethionate),5.0,Pentamidine (isethionate),2,6;14,smp_2023;smp_2791
+pentamidine (isethionate),0.5,Pentamidine (isethionate),2,5;13,smp_1927;smp_2660
+pralsetinib,0.05,Pralsetinib,2,1;13,smp_1560;smp_2653
+pravastatin (sodium),0.05,Pravastatin (sodium),2,7;13,smp_2080;smp_2698
+pravastatin (sodium),0.5,Pravastatin (sodium),2,8;13,smp_2176;smp_2686
+pravastatin (sodium),5.0,Pravastatin (sodium),2,9;13,smp_2272;smp_2674
+pyridoxine,5.0,Pyridoxine,2,6;14,smp_1992;smp_2760
+pyridoxine (hydrochloride),5.0,Pyridoxine (hydrochloride),2,6;14,smp_2059;smp_2827
+quinestrol,5.0,Quinestrol,2,6;14,smp_2000;smp_2768
+radotinib,5.0,Radotinib,2,6;14,smp_2034;smp_2802
+ralimetinib dimesylate,0.05,Ralimetinib dimesylate,2,1;13,smp_1532;smp_2649
+raltitrexed,5.0,Raltitrexed,2,6;14,smp_1986;smp_2754
+rapamycin,5.0,Rapamycin,2,6;14,smp_2013;smp_2781
+regorafenib,0.5,Regorafenib,2,2;13,smp_1609;smp_2721
+regorafenib,5.0,Regorafenib,2,3;13,smp_1705;smp_2709
+regorafenib,0.05,Regorafenib,2,1;13,smp_1513;smp_2733
+relugolix,5.0,Relugolix,2,6;14,smp_2046;smp_2814
+resveratrol,5.0,Resveratrol,2,6;14,smp_2012;smp_2780
+retinoic acid,5.0,Retinoic acid,2,6;14,smp_1979;smp_2747
+riluzole hydrochloride,5.0,Riluzole hydrochloride,2,6;14,smp_1983;smp_2751
+rimonabant,5.0,Rimonabant,2,6;14,smp_2043;smp_2811
+ritonavir,5.0,Ritonavir,2,6;14,smp_2022;smp_2790
+ropivacaine (hydrochloride monohydrate),5.0,Ropivacaine (hydrochloride monohydrate),2,6;14,smp_1998;smp_2766
+s-adenosyl-l-methionine (disulfate tosylate),5.0,S-Adenosyl-L-methionine (disulfate tosylate),2,6;14,smp_2009;smp_2777
+salicylic acid,5.0,Salicylic acid,2,6;14,smp_1999;smp_2767
+saquinavir,5.0,Saquinavir,2,6;14,smp_2014;smp_2782
+selinexor,5.0,Selinexor ,2,6;14,smp_2061;smp_2829
+sinomenine,5.0,Sinomenine,2,6;14,smp_2053;smp_2821
+sodium salicylate,5.0,Sodium Salicylate,2,6;14,smp_1989;smp_2757
+sonidegib,0.05,Sonidegib,2,1;13,smp_1548;smp_2651
+sulfisoxazole,0.5,Sulfisoxazole,2,5;13,smp_1929;smp_2661
+sulfisoxazole,5.0,Sulfisoxazole,2,6;14,smp_2025;smp_2793
+temsirolimus,5.0,Temsirolimus,2,6;14,smp_1994;smp_2762
+terfenadine,0.5,Terfenadine,2,5;13,smp_1910;smp_2659
+terfenadine,5.0,Terfenadine,2,6;14,smp_2006;smp_2774
+thymol,5.0,Thymol,2,6;14,smp_2016;smp_2784
+tofacitinib,5.0,Tofacitinib,2,6;14,smp_2001;smp_2769
+tofacitinib (citrate),5.0,Tofacitinib (citrate),2,6;14,smp_2015;smp_2783
+tolcapone,5.0,Tolcapone,2,6;14,smp_2005;smp_2773
+topotecan (hydrochloride),0.05,Topotecan (hydrochloride),2,7;13,smp_2093;smp_2705
+topotecan (hydrochloride),5.0,Topotecan (hydrochloride),2,9;13,smp_2285;smp_2681
+topotecan (hydrochloride),0.5,Topotecan (hydrochloride),2,8;13,smp_2189;smp_2693
+trametinib,0.5,Trametinib,2,2;11,smp_1625;smp_2523
+trametinib,0.05,Trametinib,2,1;10,smp_1529;smp_2427
+trametinib,5.0,Trametinib,2,3;12,smp_1721;smp_2619
+triamcinolone,5.0,Triamcinolone,2,6;14,smp_2041;smp_2809
+triclosan,5.0,Triclosan,2,6;14,smp_2036;smp_2804
+trifluridine,5.0,Trifluridine,2,6;14,smp_1977;smp_2745
+trimetrexate,5.0,Trimetrexate,2,6;14,smp_2002;smp_2770
+tucidinostat,5.0,Tucidinostat,2,6;14,smp_2037;smp_2805
+vilanterol,5.0,Vilanterol,2,6;14,smp_2019;smp_2787
+vinblastine (sulfate),5.0,Vinblastine (sulfate),2,6;14,smp_1981;smp_2749
+c-kit-in-1,0.05,c-Kit-IN-1,2,1;13,smp_1509;smp_2648
+olaparib,0.05,olaparib,2,1;13,smp_1568;smp_2654

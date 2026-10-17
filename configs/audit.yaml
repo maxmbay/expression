@@ -1,0 +1,23 @@
+# M0 data and design audit. Metadata-only except for a small expression sample.
+source:
+  repo_id: tahoebio/Tahoe-100M
+  revision: 349e2a55f5538a3e73b32a06c6bdd8e9e87011e8
+
+paths:
+  raw: data/raw/tahoe-100m
+  interim: data/interim
+  reports: reports
+
+eligibility:
+  min_treated_cells: 128      # retained treated cells per (line, well)
+  min_control_cells: 256      # retained vehicle cells per (line, plate), across both DMSO wells
+  min_candidates_per_query: 10
+  test_fraction: 0.15          # expected share of eligible pairs held out under protocol A
+
+cohort_targets:
+  smoke: {lines: 4, compounds: 12}
+  prototype: {lines: 12, compounds: 160, max_cells_per_condition_well: 256}
+
+expression_sample:
+  shards: [0, 1694, 3387]     # first, middle, last shard
+  rows_per_shard: 2000

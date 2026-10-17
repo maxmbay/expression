@@ -1,0 +1,43 @@
+{
+  "smoke": {
+    "plates": [
+      6
+    ],
+    "lines": [
+      "CVCL_0480",
+      "CVCL_0546",
+      "CVCL_1056",
+      "CVCL_1285"
+    ],
+    "compounds": [
+      "busulfan",
+      "vilanterol",
+      "fluvoxamine (maleate)",
+      "berberine (chloride hydrate)",
+      "bergenin",
+      "bimatoprost",
+      "l-thyroxine (sodium salt pentahydrate)",
+      "gallic acid (hydrate)",
+      "relugolix",
+      "18\u03b2-glycyrrhetinic acid",
+      "berbamine",
+      "gemfibrozil"
+    ],
+    "treated_cap": 128,
+    "control_cap": 512
+  },
+  "prototype_lines": [
+    "CVCL_0480",
+    "CVCL_0546",
+    "CVCL_1056",
+    "CVCL_1285",
+    "CVCL_0359",
+    "CVCL_0459",
+    "CVCL_0399",
+    "CVCL_0023",
+    "CVCL_1119",
+    "CVCL_1381",
+    "CVCL_1550",
+    "CVCL_0320"
+  ]
+}
