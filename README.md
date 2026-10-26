@@ -1,5 +1,31 @@
 # expression
 
+**Question.** For one cancer cell line on one plate, can a conditional flow
+rank held-out drugs by the share of cells that reach a goal state better than
+a shared drug–dose shift?
+
+**Findings.**
+1. On the locked test (rankings hashed before treated wells were scored), the
+   shared shift's mean top-1 observed utility is **0.0224** vs **0.0216** for
+   ridge and **0** for doing nothing (`reports/benchmark.md`; 207 queries).
+2. Shared shift minus the next baseline is **0.0008** (about **0.08**
+   percentage points). The pre-registered gate required **+5** percentage
+   points with a paired interval and consistent seeds. The gate does not pass
+   (README Status; `reports/benchmark.md`; `ROADMAP.md` M4).
+3. That result is consistent with a hard shared-shift baseline for
+   share-of-cells ranking (see Ahlmann-Eltze, Huber and Anders, *Nature Methods*
+   2025). The flow was not a finalist (validation top-1 utility **0.0023** vs
+   shared shift **0.0265**; `reports/flow.md`).
+
+![Plate search design (synthetic candidates)](docs/figures/plate-search.png)
+
+*This figure illustrates the within-plate ranking design. Treated responses in
+the README figures are synthetic until splits and goals are frozen; the locked
+test numbers above are from measured wells after hashing
+(`reports/test_rankings.sha256`).*
+
+---
+
 Which genes a cell is using at a given moment, its *expression state*, largely decides what it does: divide, rest, repair damage, or respond to stress. Many diseases involve cells stuck in the wrong state. Cancer cells keep their division programs running and ignore the damage signals that should stop them; in chronic inflammation or fibrosis, cells stay locked in a harmful program. Seen at the level of single cells, treatment means moving cells into a better state. Small-molecule drugs are the most common way to do that; gene editing, engineered proteins, and combinations are others.
 
 The target is rarely one gene. It is usually a wanted program switched on, such as the DNA-damage response that stops a cancer cell from dividing, while an unwanted one stays off, such as a general stress response that any toxic drug can trigger. Cells of the same line also respond unevenly: one drug moves every cell a little, another moves a fraction of the cells all the way. When the goal is a state, what counts is the share of cells that reach it, not how far the average cell moved.
